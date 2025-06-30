@@ -2,3 +2,5 @@ https://www.geeksforgeeks.org/java/java-data-types/
 	-> https://media.geeksforgeeks.org/wp-content/uploads/20250619155321977504/data_types_in_java.webp (image)
 https://www.geeksforgeeks.org/java/variables-in-java/
 https://www.geeksforgeeks.org/java/operators-in-java/
+https://www.geeksforgeeks.org/decision-making-javaif-else-switch-break-continue-jump/
+https://www.geeksforgeeks.org/java/loops-in-java/
