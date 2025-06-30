@@ -1,6 +1,12 @@
 import java.util.Scanner;
 public class tutorial1{
-	public static void main(String args[]){
+	public static void main(String a[]){
+		int num = 43;
+		// (n%2==0) ? System.out.println("it is even");:System.out.println("it is odd");
+		System.out.println((num%2==0)?"It is Even Number":"it is odd number");
+	}
+
+	public static void main8(String args[]){
 		int num = 10;
 		int j = 0;
 
