@@ -27,7 +27,7 @@ class C{
 	public void show(){
 		System.out.println("in C Show");
 	}
-	private void config(){
+	public void config(){
 		System.out.println("in C Config");
 	}
 }
