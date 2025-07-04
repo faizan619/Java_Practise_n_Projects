@@ -1,2 +1,37 @@
 https://www.geeksforgeeks.org/java/java-data-types/
 	-> https://media.geeksforgeeks.org/wp-content/uploads/20250619155321977504/data_types_in_java.webp (image)
+
+Inheritance.
+Static Variable and Static Block 
+String Java
+Equal toString.
+
+Array -> working with array plus Class (practise some more times)
+####
+
+		Employee emp1 = new Employee();
+		emp1.name = "faizan";
+		emp1.rollno = 24;
+		
+		Employee emp2 = new Employee();
+		emp2.name = "asad";
+		emp2.rollno = 25;
+		
+		Employee emp3 = new Employee();
+		emp3.name = "giridhar";
+		emp3.rollno = 26;
+		
+		Employee emp4 = new Employee();
+		emp4.name = "wasee";
+		emp4.rollno = 27;
+
+		Employee emp[] = new Employee[4];
+		emp[0] = emp1;
+		emp[1] = emp2;
+		emp[2] = emp3;
+		emp[3] = emp4;
+
+		for(Employee em:emp){
+			System.out.println(em.name+" /:/ "+em.rollno);
+		}
+####
