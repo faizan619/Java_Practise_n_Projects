@@ -1,0 +1,3 @@
+Thread State
+
+New -----[ start() ]------- Runnable -------[ run() ]----------- Running -----------[ sleep(), wait() ]---------- Waiting ---------[ notify{} ]---------Runnable*
