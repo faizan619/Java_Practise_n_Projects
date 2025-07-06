@@ -1,11 +1,49 @@
 import TopicLearn.Br;
 
+class Student{
+    int age;
+    String name;
+
+    public void show(){
+        System.out.println(name+" : "+age);
+    }
+}
+
 public class Tut6 {
     public static void main(String[] args) {
         System.out.println("Tutorial 6 in Java");
 
+        
         Br next = new Br();
         next.seperate("Aarrays in Java");
+        
+        Student st1 = new Student();
+        st1.age = 22;
+        st1.name = "faizan";
+
+        Student st2 = new Student();
+        st2.age = 21;
+        st2.name = "Ahmed";
+
+        Student st3 = new Student();
+        st3.age = 23;
+        st3.name = "giridhar";
+
+        Student st[] = new Student[3];
+        st[0] = st1;
+        st[1] = st2;
+        st[2] = st3;
+
+        // System.out.println("Students : "+st);
+        for(Student s1 : st){
+            System.out.println(s1.age+" : "+s1.name);
+        }
+        // st1.show();
+
+        for(int i=0;i<3;i++){
+            st[i].show();
+        }
+
 
         String names[] = new String[10];
 
@@ -57,14 +95,12 @@ public class Tut6 {
             }
         }
 
-        for(int m1[]:n1){
-            for(int m:m1){
-                System.out.print(m+" ");
-            }
-            System.out.println();
-        }
-
-
+        // for(int m1[]:n1){
+        //     for(int m:m1){
+        //         System.out.print(m+" ");
+        //     }
+        //     System.out.println();
+        // }
 
     }
 }
