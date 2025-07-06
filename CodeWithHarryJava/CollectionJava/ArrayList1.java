@@ -17,6 +17,8 @@ public class ArrayList1{
         nums.add(45);
         System.out.println("Value at index 3 : "+nums.get(3));
         System.out.println("Index of 35 : "+nums.indexOf(35));
+        System.out.println(nums.contains(10));
+        System.out.println(nums.isEmpty());
 
         System.out.println(nums);
         for(int n:nums){
