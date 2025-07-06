@@ -2,6 +2,7 @@ class Student{
 	int rollno;
 	String name;
 	int marks;
+	public int age;
 }
 public class Array{
 	public static void main(String args[]){
@@ -57,7 +58,7 @@ public class Array{
 	}
 
 	public static void main3(String[] ag){
-		int nums[][] = new int[3][];		//jagged Array;
+		int nums[][] = new int[3][];		//jagged Array (also called a ragged array) ;
 
 		nums[0] = new int[3];
 		nums[1] = new int[4];

@@ -34,7 +34,7 @@ abstract class Indica extends Car{
     }
 }
 
-public class AbstractInner {
+public class AbstractJ {
     public static void main(String[] args) {
         System.out.println("AbstractInner Class in Java");
 
