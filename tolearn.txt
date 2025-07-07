@@ -5,6 +5,7 @@ Inheritance.
 Static Variable and Static Block 
 String Java
 Equal toString.
+ENUM
 
 Array -> working with array plus Class (practise some more times)
 ####
