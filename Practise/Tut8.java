@@ -8,8 +8,8 @@ abstract class Tut8_Car{
 }
 
 abstract class Tut8_Indica extends Tut8_Car{
-    public void driving(){
-        System.out.println("Indica is Driving");
+    public final void driving(){
+        System.out.println("*****Indica is Driving");
     }
 }
 
@@ -90,9 +90,9 @@ public class Tut8 {
         // Tut8_Tata car2 = new Tut8_Tata() {
         Tut8_Indica car2 = new Tut8_Indica() {
             // As all the method is declared so it is not a ananomous class it is Concrete class
-            public void driving(){
-                System.out.println("Inner Indica is Driving");
-            }
+            // public void driving(){
+            //     System.out.println("Inner Indica is Driving");
+            // }
           
             @Override
             public void diving(){
