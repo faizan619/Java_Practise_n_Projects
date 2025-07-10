@@ -38,4 +38,29 @@ public class ProductService {
         products.add(prod);
     }
 
+    public void updateProductById(Product prod){
+        int index = 0;
+        for(int i=0;i<products.size();i++){
+            if(products.get(i).getProdId() == prod.getProdId()){
+                System.out.println("products id : "+products.get(i).getProdId());
+                System.out.println("prod id : "+prod.getProdId());
+                index = i;
+            }
+            products.set(index,prod);
+        }
+    }
+
+    public void deleteProduct(int prodId) {
+        // throw new UnsupportedOperationException("Not supported yet.");
+        int index = 0;
+        for(int i=0;i<products.size();i++){
+            if(products.get(i).getProdId() == prodId){
+                System.out.println("Delete : "+prodId);
+                index = i;
+            }
+            products.remove(index);
+        }
+
+    }
+
 }
