@@ -48,6 +48,19 @@ public class Product {
     public void setPrice(int price) {
         this.price = price;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Product{");
+        sb.append("prodId=").append(prodId);
+        sb.append(", prodName=").append(prodName);
+        sb.append(", price=").append(price);
+        sb.append('}');
+        return sb.toString();
+    }
+
+
     
     
 }
