@@ -71,20 +71,76 @@ public class Pattern2{
 			System.out.println();
 		}
 
-// 		<?php
-// $num=5;
-// for($i=0;$i<$num;$i++){
-//     $cc = 'A';
-//     for($j=1;$j<=$num;$j++){
-//         echo "\n".$j." : ".$num."\n";
-//         if($j>=$num-$i){
-//             echo $cc;
-//         }
-//         ++$cc;
-//     }
-//     echo "\n";
-// }
 
-// ?>
+
+		System.out.println("=========================================");
+		System.out.println("Pattern 18");
+
+		// 		<?php
+		// $num=5;
+		// for($i=0;$i<$num;$i++){
+		//     $cc = 'A';
+		//     for($j=1;$j<=$num;$j++){
+		//         echo "\n".$j." : ".$num."\n";
+		//         if($j>=$num-$i){
+		//             echo $cc;
+		//         }
+		//         ++$cc;
+		//     }
+		//     echo "\n";
+		// }
+
+		// ?>
+
+
+		System.out.println("=========================================");
+		System.out.println("Pattern 19");
+		// try to find the time complexity of this solution
+		for(int i=0;i<num;i++){
+			for(int j=0;j<num-i;j++){
+				System.out.print("*");
+			}
+
+			for(int j=0;j<i*2;j++){
+				System.out.print(" ");
+			}
+
+			for(int j=0;j<num-i;j++){
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+		for(int i=0;i<num;i++){
+			for(int j=0;j<=i;j++){
+				System.out.print("*");
+			}
+			for(int j=0;j<=num*2-(i*2)-3;j++){
+				System.out.print(" ");
+			}
+			for(int j=0;j<=i;j++){
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+
+		System.out.println("=====================================");
+		System.out.println("Pattern 21");
+
+		for(int i=0;i<num;i++){
+			for(int j=0;j<num;j++){
+
+				if(i==0 || j==0 || i==num-1 || j==num-1){
+					System.out.print("*");
+				}
+				else{
+					System.out.print(" ");
+				}
+
+			}
+			System.out.println();
+		}
+
+
+
 	}
 }
