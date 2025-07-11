@@ -2,14 +2,19 @@ package com.simpleWebApp.model;
 
 import org.springframework.stereotype.Component;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
 // import lombok.AllArgsConstructor;
 // import lombok.Data;
 
 // @Data
 // @AllArgsConstructor
 @Component
+@Entity         // hibernate k time isse use karna hai for saving the data by repo
 public class Product {
     
+    @Id
     private int prodId;
     private String prodName;
     private int price;
