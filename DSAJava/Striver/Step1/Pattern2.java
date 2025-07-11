@@ -70,5 +70,21 @@ public class Pattern2{
 			}
 			System.out.println();
 		}
+
+// 		<?php
+// $num=5;
+// for($i=0;$i<$num;$i++){
+//     $cc = 'A';
+//     for($j=1;$j<=$num;$j++){
+//         echo "\n".$j." : ".$num."\n";
+//         if($j>=$num-$i){
+//             echo $cc;
+//         }
+//         ++$cc;
+//     }
+//     echo "\n";
+// }
+
+// ?>
 	}
 }
