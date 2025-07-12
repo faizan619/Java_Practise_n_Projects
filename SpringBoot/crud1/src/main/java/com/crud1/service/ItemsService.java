@@ -15,7 +15,8 @@ public class ItemsService {
             new Items(101, "watch", 540, true, "Mumbai"),
             new Items(102, "phone", 23000, true, "Borivali"),
             new Items(103, "charger", 21000, false, "Bandra"),
-            new Items(104, "notebook", 230, false, "Malad")));
+            new Items(104, "notebook", 230, false, "Malad")
+        ));
 
     public List<Items> getItems() {
         return item;
@@ -32,5 +33,25 @@ public class ItemsService {
 
     public void addItem(Items mm){
         item.add(mm);
+    }
+
+    public void updateItem(Items nn){
+        int index = 0;
+        for(int i=0;i<item.size();i++){
+            if(item.get(i).getItemId() == nn.getItemId()){
+                index = i;
+            }
+            item.set(index,nn);
+        }
+    }
+
+    public void deleteItem(int itemId){
+        int index = 0;
+        for(int i=0;i<item.size();i++){
+            if(item.get(i).getItemId() == itemId){
+                index = itemId;
+            }
+            item.remove(index);
+        }
     }
 }
