@@ -21,3 +21,15 @@ Video 1 -  [ https://www.youtube.com/watch?v=htZbweM4fMM&list=PLsyeobzWxl7qbKoSg
 - Done
 
 Video 2 - [ https://www.youtube.com/watch?v=_49KFUV7TVY&list=PLsyeobzWxl7qbKoSgR5ub6jolI8-ocxCF&index=24 ]
+1) Also Start with Service. 
+ A] create service file. and insert @service annotation at the top of class
+ B] create method as getAllproduct
+
+2) Starting with the Controller part.. 
+  A] first creating the get method to fetch all products in /api/products -GET
+  B] create the object of the service and give annotation of @Autowired
+  C] in the get method call the method from service ```service.getAllproduct()``` to fetch all data
+
+3) create a interface in repo and extends that class with JPARepository and give annotation of @Repository - done
+4) in productService create obj of productrepo and give annotation of @Autowired 
+5) inside getAllproduct return repo.findAll();
