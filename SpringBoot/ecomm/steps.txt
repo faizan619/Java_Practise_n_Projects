@@ -33,3 +33,14 @@ Video 2 - [ https://www.youtube.com/watch?v=_49KFUV7TVY&list=PLsyeobzWxl7qbKoSgR
 3) create a interface in repo and extends that class with JPARepository and give annotation of @Repository - done
 4) in productService create obj of productrepo and give annotation of @Autowired 
 5) inside getAllproduct return repo.findAll();
+6) for making the id autoincrement in modal product add this line above id and below @ID ``@GeneratedValue(strategy = GenerationType.IDENTITY)```
+7) create a data.sql inside java/resource folder and implement the insert query!
+  A] INSERT INTO product (name, desc, brand, price, category, release_date, available, quantity) VALUES
+('Wireless Mouse', 'Smooth and responsive', 'LogiTech', 1299.99, 'Electronics', '2024-01-15', true, 100),
+('Gaming Keyboard', 'RGB mechanical keys', 'Razer', 5999.50, 'Electronics', '2024-02-20', true, 50),
+('Electric Kettle', '1.5L stainless steel', 'Prestige', 1599.00, 'Kitchen', '2024-04-10', true, 40);
+
+8) while implementing it shows error of database not found so in  application.properties insert this line to wait for database ```spring.jpa.defer-datasource-initialization = true```
+9) while you try to fetch the data in react application it will  show CORS error. so for that 
+  A] go to ProductController
+  B] after @RestController and  before @RequestMapping() write this ``` @Crossorigin ``` -- [ import org.springframework.web.bind.annotation.CrossOrigin ]
