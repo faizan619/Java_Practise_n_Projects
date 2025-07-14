@@ -1,0 +1,23 @@
+Video 1 -  [ https://www.youtube.com/watch?v=htZbweM4fMM&list=PLsyeobzWxl7qbKoSgR5ub6jolI8-ocxCF ]
+1) set up the database. in src/main/resource/application.properties
+
+2) create all the package of controller, model, service, repo
+
+3) set up modal with column [ int -> primary key
+                              name -> String
+                              desc -> String
+                              brand -> String
+                              price -> int
+                              category -> String
+                              releaseDate -> Date
+                              available -> boolean
+                              quantity ->int
+                              image ?
+                            ]
+    A] import the lombok annotation liek @data, @AllArgsConstructor and @NoargsConstructor
+    B] from JPA toc create table enter annotation @Entity and mark id and @Id above it in modal
+    C] Rerun the project then in browser open localhost:8080/h2-console 
+    D] with the properties assign for database enter those value. 
+- Done
+
+Video 2 - [ https://www.youtube.com/watch?v=_49KFUV7TVY&list=PLsyeobzWxl7qbKoSgR5ub6jolI8-ocxCF&index=24 ]
