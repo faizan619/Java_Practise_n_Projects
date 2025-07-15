@@ -56,9 +56,34 @@ public class Recursion{
 		printArray(newarr,size);
 	}
 
+	public static void reverse_array2(int arr[],int n){
+		int newarr[] = new int[n];
+		for(int i=n-1;i>=0;i--){
+			newarr[n-i-1] = arr[i];
+		}
+		printarr2(newarr,n);
+	}
+
+	public static void printarr2(int ar2[],int size){
+		System.out.print("Reverse array : ");
+		for(int i=0;i<size;i++){
+			System.out.print(ar2[i]+" ");
+		}
+		System.out.println();
+	}
+
 	public static void main(String[] args) {
 		System.out.println("Recursion in Java");
 
+		String name = "faizan";
+		for(int i=0;i<name.length();i++){
+			System.out.print(name.charAt(i)+" ");
+		}
+		System.out.println();
+
+
+		// int arr[] = {12,14,16,18,22,24,26,28,32,34,36,38,42,44,46,48};
+		// reverse_array2(arr,arr.length);
 
 		// finobacci(5);
 		// int n =5;
