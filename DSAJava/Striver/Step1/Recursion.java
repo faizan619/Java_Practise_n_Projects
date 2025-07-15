@@ -72,14 +72,35 @@ public class Recursion{
 		System.out.println();
 	}
 
+	public static boolean isPalindrome(String content){
+		int N = content.length();
+		for(int i=0;i<N;i++){
+			if(content.charAt(i) != content.charAt(N-i-1)) return false;
+		}
+		return true;
+	}
+
+
 	public static void main(String[] args) {
 		System.out.println("Recursion in Java");
 
-		String name = "faizan";
-		for(int i=0;i<name.length();i++){
-			System.out.print(name.charAt(i)+" ");
+		// String name = "faizan";
+		// System.out.println(name.charAt(name.length()-1));
+		boolean res = isPalindrome("racecar");
+		// boolean res = isPalindrome("faizan");
+		if(res){
+			System.out.println("It is a Palindrome");
 		}
-		System.out.println();
+		else{
+			System.out.println("It is not a Palindrome");
+		}
+
+
+		// String name = "faizan";
+		// for(int i=0;i<name.length();i++){
+		// 	System.out.print(name.charAt(i)+" ");
+		// }
+		// System.out.println();
 
 
 		// int arr[] = {12,14,16,18,22,24,26,28,32,34,36,38,42,44,46,48};
