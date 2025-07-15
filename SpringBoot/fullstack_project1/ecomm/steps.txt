@@ -88,3 +88,5 @@ Video 4 - [ https://www.youtube.com/watch?v=eznebH5QJrA&list=PLsyeobzWxl7qbKoSgR
       so in this we have manage .if we didn;t get any data from given id it will sent not found http req with no data. :)
 
 Video 5 - [ https://www.youtube.com/watch?v=JIWdBBtCrjM&list=PLsyeobzWxl7qbKoSgR5ub6jolI8-ocxCF&index=27 ]
+1] remove the part in modal where you are formating the date bcoz now that will be manage by the frontend
+2] in modal create new variable for image
