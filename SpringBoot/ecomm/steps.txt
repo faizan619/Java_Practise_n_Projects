@@ -41,6 +41,50 @@ Video 2 - [ https://www.youtube.com/watch?v=_49KFUV7TVY&list=PLsyeobzWxl7qbKoSgR
 ('Electric Kettle', '1.5L stainless steel', 'Prestige', 1599.00, 'Kitchen', '2024-04-10', true, 40);
 
 8) while implementing it shows error of database not found so in  application.properties insert this line to wait for database ```spring.jpa.defer-datasource-initialization = true```
+
+Video 3 - [ https://www.youtube.com/watch?v=iC1a8cUzGgc&list=PLsyeobzWxl7qbKoSgR5ub6jolI8-ocxCF&index=25 ]
 9) while you try to fetch the data in react application it will  show CORS error. so for that 
   A] go to ProductController
   B] after @RestController and  before @RequestMapping() write this ``` @Crossorigin ``` -- [ import org.springframework.web.bind.annotation.CrossOrigin ]
+
+Video 4 - [ https://www.youtube.com/watch?v=eznebH5QJrA&list=PLsyeobzWxl7qbKoSgR5ub6jolI8-ocxCF&index=26 ]
+10) to fetch the data using Id
+  A] in controller create a method to fetch id and also using pathvairable annotation as parameter capture the id.
+  B] then return it with service.getProductById() along with id in parameter;
+  C] in service create a method getProductById() and capture id in parameter and sent it to repo to fetch the data like ``return repo.findById(id).orElse(null);``
+  D] as we are capturing the releaseDate data in database and datatime format but we want it in date so go to Product modal and above private Date releaseData write this ```@JsonFormat(shape = JsonFormat.Shape.String, pattern = "dd-MM-yyyy")``` it will change the format to dd-mm-yyyy
+  E] To sent the http status code along with the data we need to change in the ProductController
+  F] change the getAllproduct method of 
+        ####
+          public List<Product> getAllProducts(){
+              return service.getAllProducts();
+          } 
+        ####
+        to
+        ####
+          public ResponseEntity<List<Product>> getAllProducts(){
+              return new ResponseEntity<>(service.getAllProducts(), HttpStatus.OK);
+          }
+        ####
+        cover it with ResponseEntity and also return data with it along with other parameter of HttpStatus.ok
+  G] similarly in getProductById change the controller
+      ####
+        public Product getProduct(@PathVariable int id){
+          return service.getProductById(id);
+        }
+      ####
+      to 
+      ####
+        public ResponseEntity<Product> getProduct(@PathVariable int id){
+            Product product = service.getProductById(id)
+            if(product != null){
+                return new ResponseEntity<>(product,HttpStatus.OK);    
+            }
+            else{
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);    
+            }
+        }
+      ####
+      so in this we have manage .if we didn;t get any data from given id it will sent not found http req with no data. :)
+
+Video 5 - [ https://www.youtube.com/watch?v=JIWdBBtCrjM&list=PLsyeobzWxl7qbKoSgR5ub6jolI8-ocxCF&index=27 ]
