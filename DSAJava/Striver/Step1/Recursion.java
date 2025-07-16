@@ -9,7 +9,7 @@ public class Recursion{
 		}
 	}
 
-	public static void N_to_one_times(int N){
+	public static void N_to_one_	times(int N){
 		if(N<=0){
 			return;
 		}
