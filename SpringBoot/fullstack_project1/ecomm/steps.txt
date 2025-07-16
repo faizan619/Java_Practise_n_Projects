@@ -95,3 +95,10 @@ Video ? - [ https://www.youtube.com/watch?v=sjLMt7Yefng ]
 1] go to Repo JPA for implementing the Search method by Brand 
 2] create a method and give annotation of @Query
 3] go to controller part
+  A]  @GetMapping("/product/search")
+    public ResponseEntity<List<Product>> searchProduct(@RequestParam String keyword){
+        System.out.println("Searching with : "+keyword);
+        List<Product> product = service.searchProduct(keyword);
+        return new ResponseEntity<>(product, HttpStatus.OK);
+    }
+    
