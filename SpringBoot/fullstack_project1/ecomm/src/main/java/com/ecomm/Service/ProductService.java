@@ -1,5 +1,6 @@
 package com.ecomm.Service;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,8 +25,8 @@ public class ProductService {
         // return repo.findById(id).get();
     }
 
-    // public Product addProduct(Product product, MultipartFile imageFile) throws IOException {
-    public Product addProduct(Product product, MultipartFile imageFile) {
+    public Product addProduct(Product product, MultipartFile imageFile) throws IOException {
+    // public Product addProduct(Product product, MultipartFile imageFile) {
         product.setImageName(imageFile.getOriginalFilename());
         product.setImageType(imageFile.getContentType());
         product.setImageData(imageFile.getBytes()); 
@@ -38,6 +39,10 @@ public class ProductService {
         product.setImageName(imageFile.getOriginalFilename());
         product.setImageType(imageFile.getContentType());
         return repo.save(product);
+    }
+
+    public List<Product> searchProduct(String keyword) {
+        return repo.searchByProducts(keyword);
     }
     
 }
