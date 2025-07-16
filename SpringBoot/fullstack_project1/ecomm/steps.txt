@@ -90,3 +90,8 @@ Video 4 - [ https://www.youtube.com/watch?v=eznebH5QJrA&list=PLsyeobzWxl7qbKoSgR
 Video 5 - [ https://www.youtube.com/watch?v=JIWdBBtCrjM&list=PLsyeobzWxl7qbKoSgR5ub6jolI8-ocxCF&index=27 ]
 1] remove the part in modal where you are formating the date bcoz now that will be manage by the frontend
 2] in modal create new variable for image
+
+Video ? - [ https://www.youtube.com/watch?v=sjLMt7Yefng ]
+1] go to Repo JPA for implementing the Search method by Brand 
+2] create a method and give annotation of @Query
+3] go to controller part
