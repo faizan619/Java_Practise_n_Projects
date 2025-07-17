@@ -2,16 +2,31 @@ package com.springJPA.model;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 // This Annotation is used to specify a class as a JPA entity
 @Entity
+
+// Everything setter, getter, constructor is removed because of this annotation . it alone handle everything has reduce line of code
+@Getter
+@Setter
+@AllArgsConstructor     // it means parameterised constructor
+@NoArgsConstructor      // it means default constructor
 
 // In table we can define the name of table and schema is the database name
 @Table(
@@ -35,7 +50,17 @@ public class Product {
     
     @Id
     // the identity stategy relies of the database auto increment column
-    @GeneratedValue(strategy = GenerationType.IDENTITY)  
+    // @GeneratedValue(strategy = GenerationType.IDENTITY)  
+
+    // JPA supported 4 different types primary key generation strategies that generated the primary key value programmlically or use database feature,like auto increment column or sequence.
+
+    //@GeneratedValue(strategy = GenerationType.AUTO)  // this is default generation type and let the persistence provider choose the generation strategy-- and persistence provider most of the time use sequence as a primary key generator.
+
+    // @GeneratedValue(strategy = GenerationType.IDENTITY)  // it relies on auto increment database column and let the database generate a new value with each insert operation
+
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="product_generator_n")
+    @SequenceGenerator(name="product_generator_n",sequenceName="product_sequence_name",allocationSize=1)    // this create a new table to store the primary key 
+    
     private long id;
 
     // it is used to change the column name to this given name.
@@ -48,80 +73,88 @@ public class Product {
     private BigDecimal price;
     private boolean active;
     private String imageUrl;
+
+
+    // This annotation is provided by hibernate
+    @CreationTimestamp
     private LocalDateTime dateCreated;
+
+    @UpdateTimestamp
     private LocalDateTime lastUpdated;
 
-    public long getId() {
-        return id;
-    }
 
-    public void setId(long id) {
-        this.id = id;
-    }
+    // Below everything is removed because of lombok library annotation @Getter and @Setter
+    // public long getId() {
+    //     return id;
+    // }
 
-    public String getSku() {
-        return sku;
-    }
+    // public void setId(long id) {
+    //     this.id = id;
+    // }
 
-    public void setSku(String sku) {
-        this.sku = sku;
-    }
+    // public String getSku() {
+    //     return sku;
+    // }
 
-    public String getName() {
-        return name;
-    }
+    // public void setSku(String sku) {
+    //     this.sku = sku;
+    // }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    // public String getName() {
+    //     return name;
+    // }
 
-    public String getDescription() {
-        return description;
-    }
+    // public void setName(String name) {
+    //     this.name = name;
+    // }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+    // public String getDescription() {
+    //     return description;
+    // }
 
-    public BigDecimal getPrice() {
-        return price;
-    }
+    // public void setDescription(String description) {
+    //     this.description = description;
+    // }
 
-    public void setPrice(BigDecimal price) {
-        this.price = price;
-    }
+    // public BigDecimal getPrice() {
+    //     return price;
+    // }
 
-    public boolean isActive() {
-        return active;
-    }
+    // public void setPrice(BigDecimal price) {
+    //     this.price = price;
+    // }
 
-    public void setActive(boolean active) {
-        this.active = active;
-    }
+    // public boolean isActive() {
+    //     return active;
+    // }
 
-    public String getImageUrl() {
-        return imageUrl;
-    }
+    // public void setActive(boolean active) {
+    //     this.active = active;
+    // }
 
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
+    // public String getImageUrl() {
+    //     return imageUrl;
+    // }
 
-    public LocalDateTime getDateCreated() {
-        return dateCreated;
-    }
+    // public void setImageUrl(String imageUrl) {
+    //     this.imageUrl = imageUrl;
+    // }
 
-    public void setDateCreated(LocalDateTime dateCreated) {
-        this.dateCreated = dateCreated;
-    }
+    // public LocalDateTime getDateCreated() {
+    //     return dateCreated;
+    // }
 
-    public LocalDateTime getLastUpdated() {
-        return lastUpdated;
-    }
+    // public void setDateCreated(LocalDateTime dateCreated) {
+    //     this.dateCreated = dateCreated;
+    // }
 
-    public void setLastUpdated(LocalDateTime lastUpdated) {
-        this.lastUpdated = lastUpdated;
-    }
+    // public LocalDateTime getLastUpdated() {
+    //     return lastUpdated;
+    // }
+
+    // public void setLastUpdated(LocalDateTime lastUpdated) {
+    //     this.lastUpdated = lastUpdated;
+    // }
 
 
 

@@ -5,3 +5,15 @@
     A] Give the Class name a annotation of Entity to make the Product Modal JPA Entity 
     B] initialize the column names and give the primarykey a annotation of @Id 
     C] Then Create the Getter and Setter of all the Columns
+    D] Learn about the Annotation like Entity, Table, Id, GeneratedValue, Column 
+    E] use CreationTimestamp annotation and updatetimestamp annotation for field like created_at and updated_at
+    F] ** Implement the Lombok library in pom.xml **
+    G] remove all the getter, setter and constructor in the Product Model. and implement the annotation of @Getter, @Setter, @AllArgsConstructor and @NoArgsConstructor
+4) Start with the Repository part.
+    A] start by creating own interface method
+        a] public interface ProductRepository extends JpaRepository<Product,Long>{} 
+            // in this the Long is the Data type of the Primary Key and Product in the Entity(modal who has this Entity annotation)
+    B] we don't need to give @Repository because JpaRepository extends simpleRepository and the simpleRepository file has @Repository so i.e we don't need to put @Repository
+    C] once the Repository is created then all the CRUD method is implement in the 'Product'\
+    D] We will start with save() method.
+        a] as the name depicts, the save() method allow us to save an entity to the DB.
