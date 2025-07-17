@@ -1,0 +1,7 @@
+1) go to start.spring.io and download the project with dependencies [data JPA, Mysql Driver];
+2) in application.properties 
+    A] Set up the mysql connect
+3) Then Create a modal with Product.java
+    A] Give the Class name a annotation of Entity to make the Product Modal JPA Entity 
+    B] initialize the column names and give the primarykey a annotation of @Id 
+    C] Then Create the Getter and Setter of all the Columns
