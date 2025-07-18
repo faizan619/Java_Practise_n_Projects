@@ -14,6 +14,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import com.springJPA.repo.ProductRepository;
 
 import static org.junit.jupiter.api.Assertions.*;
+import org.springframework.data.domain.Sort;
 
 @SpringBootTest
 // @DataJpaTest			// it is use to test the repository layer component. now it is not use because we have springboottest to manage everything
@@ -152,6 +153,27 @@ class ProductRepositoryTest{
 		products.forEach((p) -> {
 			System.out.println(p.getId());
 			System.out.println(p.getName());
+		});
+	}
+
+	@Test
+	void sortingByMultipleFields(){
+		String sortBy = "name";
+		String sortByDesc = "description";
+		String sortDir = "desc";
+
+		Sort sortByName = sortDir.equalsIgnoreCase(Sort.Direction.ASC.name())?
+							Sort.by(sortBy).ascending(): Sort.by(sortBy).descending();
+
+		Sort sortByDescription = sortDir.equalsIgnoreCase(Sort.Direction.ASC.name())?
+							Sort.by(sortByDesc).ascending(): Sort.by(sortByDesc).descending();
+
+		Sort groupBySort = sortByName.and(sortByDescription);
+
+		List<Product> products = productRepository.findAll(groupBySort);
+
+		products.forEach((p) -> {
+			System.out.println(p);
 		});
 	}
 }
