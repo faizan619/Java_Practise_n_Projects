@@ -18,6 +18,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 // This Annotation is used to specify a class as a JPA entity
 @Entity
@@ -27,7 +28,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor     // it means parameterised constructor
 @NoArgsConstructor      // it means default constructor
-
+@ToString 
 // In table we can define the name of table and schema is the database name
 @Table(
     name="products_jpa",
