@@ -4,10 +4,13 @@ import com.springJPA.model.Product;
 
 import java.util.List;
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 // import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
+
 import com.springJPA.repo.ProductRepository;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -57,6 +60,9 @@ class ProductRepositoryTest{
 	void findByIdMethod(){
 		Long id = 1L;
 		Product product = productRepository.findById(id).get(); 
+		product.forEach((p) -> {
+			System.out.println(p.getName);
+		});
 	}
 
 	@Test
@@ -92,7 +98,7 @@ class ProductRepositoryTest{
 
 		products.forEach((p) -> {
 			System.out.println(p.getName());
-		})
+		});
 	}
 
 	@Test
@@ -105,15 +111,47 @@ class ProductRepositoryTest{
 	void deleteMethod(){
 		// find an entity by id
 		Long id = 2L;
-		Product product = productRepository.findById(id);
+ 
+		Product product = productRepository.findById(id).get();
 		
 		// delete(entity)
 		productRepository.delete(product);
 	}
 
 	@Test
+	void deleteAllMethod(){
+		// productRepository.deleteAll();
+
+		// other method
+		Product product2 = productRepository.findById(5L).get();
+		Product product1 = productRepository.findById(6L).get();
+		productRepository.deleteAll(List.of(product1, product2));
+	}
+
+	@Test
 	void countMethod(){
 		long count = productRepository.count();
 		System.out.println(count);
+	}
+
+	@Test
+	void existByIdMethod(){
+		Long id = 1L;
+
+		boolean result1 = productRepository.existsById(id);
+		System.out.println(result1);
+	}
+
+	@Test
+	void findByDateCreatedBetweenMethod(){
+		LocalDateTime startDate = LocalDateTime.of(2022,02,12,17,15,48,33);
+		LocalDateTime endDate = LocalDateTime.of(2022,02,16,17,15,48,33);
+
+		List<Product> products = productRepository.findByDateCreatedBetween(startDate, endDate);
+
+		products.forEach((p) -> {
+			System.out.println(p.getId());
+			System.out.println(p.getName());
+		});
 	}
 }
