@@ -11,6 +11,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
@@ -19,6 +21,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import java.util.*;
 
 // This Annotation is used to specify a class as a JPA entity
 @Entity
@@ -74,6 +77,11 @@ public class Product {
     private BigDecimal price;
     private boolean active;
     private String imageUrl;
+
+    // ALL, PERSIST, MERGE, REFRESH, DETACH
+    @OneToMany(cascade = CascadeType.ALL) //-- all means when the product is save then all the buyerId is also saved
+    @JoinColumn(name="pc_fid",referencedColumnName = "id")
+    List<Buyers> buyersId = new ArrayList<>();
 
 
     // This annotation is provided by hibernate
