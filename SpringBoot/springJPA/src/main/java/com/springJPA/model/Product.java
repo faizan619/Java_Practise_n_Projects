@@ -83,6 +83,10 @@ public class Product {
     @JoinColumn(name="pc_fid",referencedColumnName = "id")
     List<Buyers> buyersId = new ArrayList<>();
 
+    @OntToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name="prod_d",referencedColumnName = "id")
+    private ProductDetails productDetail;
+
 
     // This annotation is provided by hibernate
     @CreationTimestamp
