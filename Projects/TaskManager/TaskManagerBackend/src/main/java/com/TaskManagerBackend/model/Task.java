@@ -16,7 +16,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-import java.util.*;
 
 @Entity
 @Getter
@@ -40,12 +39,14 @@ public class Task{
 	@Column(name="description", nullable=true, length=250)
 	private String description;
 
-	@Column(name="isActive")
-	private boolean isActive;
+	@Column(name="is_active")
+	private boolean isActive = true;
 
 	@CreationTimestamp
+	@Column(nullable=false,updatable=false)
 	private LocalDateTime dateCreated;
 
 	@UpdateTimestamp
+	@Column(nullable=false)
 	private LocalDateTime lastUpdated;
 }
