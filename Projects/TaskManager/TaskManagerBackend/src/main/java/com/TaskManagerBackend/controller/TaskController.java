@@ -11,6 +11,10 @@ import com.TaskManagerBackend.service.TaskService;
 
 import java.util.*;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
 @RestController
 public class TaskController {
 
@@ -26,4 +30,23 @@ public class TaskController {
     public Task getTaskId(@PathVariable int taskId){
         return service.getTaskById(taskId);
     }
+
+    @PostMapping("/tasks")
+    public Task addTask(@RequestBody Task task){
+        Task task1 = service.addTask(task);
+        return task1;
+    }
+
+    @DeleteMapping("/tasks/{taskId}")
+    public String deleteTask(@PathVariable int taskId){
+        service.deleteTask(taskId);
+        return "Task "+taskId+" is Successfully Deleted";
+    }
+
+    @GetMapping("/tasks/search/{keywork}")
+    public Task searchTask(@PathVariable String keyword1){
+        Task result = service.searchTask(keyword1);
+        return result;
+    }
+    
 }
