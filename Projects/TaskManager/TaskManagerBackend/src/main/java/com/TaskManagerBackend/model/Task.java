@@ -49,4 +49,11 @@ public class Task{
 	@UpdateTimestamp
 	@Column(nullable=false)
 	private LocalDateTime lastUpdated;
+
+	public Task(String title, String description, boolean isActive) {
+		this.title = title;
+		this.description = description;
+		this.isActive = isActive;
+	}
+
 }
