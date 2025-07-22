@@ -1,2 +1,0 @@
-1) ask gpt about how to pass default value in column annotation
-2) in created_at field how to set default value of current_timestamps
