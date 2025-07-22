@@ -1,17 +1,24 @@
 package com.TaskManagerBackend.service;
 
-// import java.util.ArrayList;
-// import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.TaskManagerBackend.model.Task;
+import com.TaskManagerBackend.repository.TaskRepository;
 
 @Service
 public class TaskService{
 
-    public List<Task> getAllTasks(){
+    @Autowired
+    TaskRepository repo;
 
+    public List<Task> getAllTasks(){
+        return repo.findAll();
+    }
+
+    public Task getTaskById(int taskId){
+        return repo.findById(taskId).orElse(new Task());
     }
 }
