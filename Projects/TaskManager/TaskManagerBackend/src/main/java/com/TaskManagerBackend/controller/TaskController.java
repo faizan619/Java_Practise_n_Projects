@@ -1,7 +1,14 @@
 package com.TaskManagerBackend.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import com.TaskManagerBackend.model.Task;
+
+import java.util.*;
 
 import com.TaskManagerBackend.service.TaskService;
 
@@ -9,10 +16,15 @@ import com.TaskManagerBackend.service.TaskService;
 public class TaskController {
 
     @Autowired
-    private TaskService service;
+    TaskService service;
     
     @GetMapping("/tasks")
-    public String getTasks(){
+    public List<Task> getTasks(){
         return service.getAllTasks();
+    }
+
+    @GetMapping("/tasks/{taskId}")
+    public Task getTaskId(@PathVariable int taskId){
+        return service.getTaskById(taskId);
     }
 }
