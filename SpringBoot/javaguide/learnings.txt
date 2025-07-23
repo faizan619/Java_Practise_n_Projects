@@ -1,0 +1,48 @@
+1) Spring Core Annotations
+    A] Component 
+    B] Autowired
+    C] Qualifier
+    D] Primary
+    E] Value
+
+2) Spring MVC Web Annotations
+    A] Controller
+    B] ResponseBody
+    C] RestController
+    D] RequestMapping
+    E] GetMapping
+    F] PostMapping
+    G] PutMapping
+    H] DeleteMapping
+    I] PatchMapping
+    J] PathVariable
+    K] ResponseStatus
+    L] Service
+    M] Repository
+
+3) Spring Boot Annotations
+    A] SpringBootApplication 
+    B] EnableAutoConfiguration
+    C] Async
+    D] Scheduled
+
+4) Spring Data JPA Annotations
+    A] Query
+
+5) JPA and Hibernate Annotations
+    A] ID
+    B] GeneratedValue
+    C] Entity
+    D] Table
+    E] Column
+    F] Transient 
+    G] OneToOne
+    H] OneToMany
+    I] ManyToOne
+    J] ManyToMany
+    K] JoinTable
+    L] PrimaryKeyJoinColumn
+
+6) Servlet Annotations
+    A] FunctionalInterface
+    B] MultipartConfig
