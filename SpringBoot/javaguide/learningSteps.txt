@@ -28,4 +28,18 @@
     C] similarly i also name the component of first3.java as @Component("first3") and in controller if used @Qualifier("first3")
     D] It Works :)
 
-5) 
+5) Value
+    A] in first3.java file i initialize a variable but didn't declare any value.
+    B] Using @Value("faizan alam") i put it above my variable. and in return method of getPizza i set that variable
+    C] while calling the first3.java method it shows the name.
+    D] It Works :)
+
+6) Controller and RestController
+    A] in controller we can return file like hello.html,index.html and in RestController we return data like users,names
+
+7) GetMapping and PathVariable 
+    A] in FriendsController i created new method using GetMapping as "users/username" and usnig PathVariable i am capturing username and showing in the page.
+
+8) RequestMapping
+    A] similar like GetMapping we have RequestMapping but in this we can use all method like GET,POST,PUT,DELETE
+    

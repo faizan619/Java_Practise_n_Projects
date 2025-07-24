@@ -3,19 +3,19 @@
     B] Autowired                                - Done
     C] Qualifier                                - Done
     D] Primary                                  - Done
-    E] Value
+    E] Value                                    - Done
 
 2) Spring MVC Web Annotations
-    A] Controller
-    B] ResponseBody
-    C] RestController
-    D] RequestMapping
-    E] GetMapping
-    F] PostMapping
-    G] PutMapping
-    H] DeleteMapping
-    I] PatchMapping
-    J] PathVariable
+    A] Controller                               - Done
+    B] ResponseBody                             - Done
+    C] RestController                           - Done
+    D] RequestMapping                           - Done
+    E] GetMapping                               - Done
+    F] PostMapping                              - Done
+    G] PutMapping                               - Done
+    H] DeleteMapping                            - Done
+    I] PatchMapping 
+    J] PathVariable                             - Done
     K] ResponseStatus
     L] Service
     M] Repository
