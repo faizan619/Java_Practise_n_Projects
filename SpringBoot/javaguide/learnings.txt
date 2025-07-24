@@ -1,8 +1,8 @@
 1) Spring Core Annotations
-    A] Component 
-    B] Autowired
-    C] Qualifier
-    D] Primary
+    A] Component                                - Done
+    B] Autowired                                - Done
+    C] Qualifier                                - Done
+    D] Primary                                  - Done
     E] Value
 
 2) Spring MVC Web Annotations

@@ -1,0 +1,31 @@
+1) Component
+    A] inside javaguideapplication file where main method is located. 
+    B] i create two class and created a object of those class in the main function 
+    C] then using @Component annotation i was able to call both the method
+    D] then i created different folder name Components and inside i first firstComp.java
+    E] there i create a method and using @Component i call it in main java code. 
+    F] It Works :)
+
+2) Autowired
+    A] the created PizzaController file. i called the different java class into it and initialize a variable ` private firstAuto firstauto `
+    B] Above this i use @Autowired to connect with that class 
+    C] then using firstauto i called the method inside that class.
+    D] then i called the controller code in main java file
+    E] It Works :)
+
+3) Primary
+    A] the firstAuto class is a interface so i create two different class and implement that firstAuto into then
+    B] then @Override the method present in firstAuto.
+    C] since two file has same method so i tried to firstly call the firstAuto to check which file data it takes.
+    D] it doesn't take anyone. so in second file i.e first3.java i put the @Primary annotation above the class.
+    E] when i try to run it shows the data of the first3.java method output.
+    F] and when i put the @Primary annotation in first2.java then message show is of first2.java class.
+    G] It works :)
+
+4) Qualifier
+    A] since i want to explicitely call the first2.java or first3.java so i give name to their component like for first3.java i give name of @Compoent("first2")
+    B] then in controller file i use @Qualifier("first2") it shows the message present in first2.
+    C] similarly i also name the component of first3.java as @Component("first3") and in controller if used @Qualifier("first3")
+    D] It Works :)
+
+5) 
