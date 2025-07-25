@@ -43,3 +43,27 @@
 8) RequestMapping
     A] similar like GetMapping we have RequestMapping but in this we can use all method like GET,POST,PUT,DELETE
     
+9) Query
+    A] JSQL query are like @Query(SELECT u from user u where u.email = ?1)
+    B] if we want to use the native query then @Query(value = "SELECT * FROM USERS WHERE EMAIL_ADDRESS = ?1", nativeQuery = true)
+
+10) ID
+    A] To give a Primary key to any variable then above that variable give the annotation @Id
+
+11) GeneratedValue
+    A] As a key is Primary Key then the value in that should be auto incremented. so for doing that we use GeneratedValue
+    B] this annotation is use along with the parameter like @GeneratedValue(GenerationType.IDENTITY)    // IDENTITY | SEQUENCE | TABLE | AUTO
+
+12) Entity
+    A] entity annotation is mostly given to MODAL
+    B] Entity annotation is given above the Modal class.
+
+13) Table
+    A] to customise the database table we can use the Table annotation. it accept parameters like name, schema
+    B] example : @Table(name = "users", schema="practise")
+    C] if we don't use the name then it will see the entity name same as table name
+
+14) Column
+    A] column annotation is used to give column name to a variable along with other validation like nullable
+    B] @Column(name="uname",nullable=false,length=100,unique=true)
+    C] @Column(name="price", precision=10,scale=2) // decimal (10,2)

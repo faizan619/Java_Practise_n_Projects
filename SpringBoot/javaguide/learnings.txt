@@ -17,24 +17,24 @@
     I] PatchMapping 
     J] PathVariable                             - Done
     K] ResponseStatus
-    L] Service
-    M] Repository
+    L] Service                                  - Done
+    M] Repository                               - Done
 
 3) Spring Boot Annotations
-    A] SpringBootApplication 
+    A] SpringBootApplication    
     B] EnableAutoConfiguration
     C] Async
     D] Scheduled
 
 4) Spring Data JPA Annotations
-    A] Query
+    A] Query                                    - Done
 
 5) JPA and Hibernate Annotations
-    A] ID
-    B] GeneratedValue
-    C] Entity
-    D] Table
-    E] Column
+    A] ID                                       - Done
+    B] GeneratedValue                           - Done
+    C] Entity                                   - Done
+    D] Table                                    - Done
+    E] Column                                   - Done
     F] Transient 
     G] OneToOne
     H] OneToMany
@@ -44,5 +44,5 @@
     L] PrimaryKeyJoinColumn
 
 6) Servlet Annotations
-    A] FunctionalInterface
+    A] FunctionalInterface                      - Done
     B] MultipartConfig
