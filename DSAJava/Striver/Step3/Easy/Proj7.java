@@ -2,7 +2,7 @@ public class Proj7{
 	public static void main(String[] args) {
 		// int arr[] = {1,2,3,4,5};
 		// int arr[] = {1,3,4,3,5,4,-2};
-		int arr[] = {-17,-15};
+		int arr[] = {-100};
 		uniqueSum(arr);
 	}
 
@@ -23,7 +23,6 @@ public class Proj7{
 
 		int sum = 0;
 		for(int i=0;i<alen;i++){
-			// if()
 			sum = sum+nums[i];
 		}
 		System.out.println(sum);
