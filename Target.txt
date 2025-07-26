@@ -15,13 +15,13 @@ Before 31 July
 		C] Billing Application												-
 
 	4) Learn Basic ReactJs Along with Docker								
-		A] React Components													-
+		A] React Components													- Done
 		B] React Hooks														-
 		C] React Fetch Method												-
 		D] Docker Commands													-
 		E] Implement Docker with React and Spring Boot.						-
 
-	5) Do Daily 1+ Hour of DSA 												-
+	5) Do Daily 1+ Hour of DSA 												- |
 
 Until 1st Interview some Promises (Starts From 25 July 2025)
 
