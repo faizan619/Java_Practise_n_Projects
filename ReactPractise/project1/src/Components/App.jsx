@@ -63,3 +63,18 @@ export default App;
 // })
 // .then(response => console.log(response.data))
 // .catch(error => console.error(error));
+
+
+// axios.put('https://jsonplaceholder.typicode.com/posts/1', {
+//   id: 1,
+//   title: 'Updated Title',
+//   body: 'Updated Body',
+//   userId: 1
+// })
+// .then(response => console.log('PUT Response:', response.data))
+// .catch(error => console.error('PUT Error:', error));
+
+
+// axios.delete('https://jsonplaceholder.typicode.com/posts/1')
+//   .then(response => console.log('DELETE Response:', response.data))
+//   .catch(error => console.error('DELETE Error:', error));
