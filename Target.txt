@@ -1,8 +1,8 @@
 Before 31 July
 
 	1) Complete the Three Missing Topics in java.
-		A] OOPs																-
-		B] Collections Framework											-
+		A] OOPs																- Done
+		B] Collections Framework											- Done
 		C] Release Wise Difference											-
 
 	2) Practise MySQL for Interview along with Queryies						
@@ -31,4 +31,5 @@ Until 1st Interview some Promises (Starts From 25 July 2025)
 	2) No Watch Haram Content 								|		|		|		|		|		|		|
 	3) No using Any Social media more than 30 mintutes.		|		|		|		|		|		|		|
 	4) No Talking to Girls.									|		|		|		|		|		|		|
+	5) Watch reincarnet as slime S2 as Gift 				- 
 	----------------------------------------------------------------------------------------------------------------
