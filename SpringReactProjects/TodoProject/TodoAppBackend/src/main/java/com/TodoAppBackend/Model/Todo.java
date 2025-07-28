@@ -38,11 +38,10 @@ public class Todo {
     @Column(name="task_name",nullable=false,length=256)
     private String task;
 
-    @Column(name="task_priority")
     private Boolean priority = false;
 
+    // @Value("Pending")
     @Column(name="is_completed")
-    @Value("Pending")
     private String isCompleted;
 
     @CreationTimestamp
