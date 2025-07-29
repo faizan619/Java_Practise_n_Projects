@@ -10,7 +10,7 @@
 		B] Query															-
 
 	3) Create Spring Boot three Projects									
-		A] CRUD Project														-
+		A] CRUD Project														- Done
 		B] CRUD with pagination and Sorting									-
 		C] Billing Application												-
 
