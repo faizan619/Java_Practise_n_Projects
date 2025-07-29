@@ -16,10 +16,10 @@
 
 	4) Learn Basic ReactJs Along with Docker								
 		A] React Components													- Done
-		B] React Hooks														-
-		C] React Fetch Method												-
-		D] Docker Commands													-
-		E] Implement Docker with React and Spring Boot.						-
+		B] React Hooks														- Done
+		C] React Fetch Method												- Done
+		D] Docker Commands													- Done
+		E] Implement Docker with React and Spring Boot.						- Done
 
 	5) Do Daily 1+ Hour of DSA 												- |
 

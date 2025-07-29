@@ -1,0 +1,117 @@
+https://www.youtube.com/playlist?list=PLUg9hRlm7gxR7e9OgtrsqgN7XEyNTZRPK
+
+✅ Easy (Beginner - Basic Logic & Implementation)
+
+Delete an element from an Array at specified position - C 									- 
+
+Print Duplicate Elements in Array - Java													-
+
+Find Second Smallest Number in an Array : Java												-
+
+Find Second Largest Number in an Array (Multiple Approaches)								-
+
+Reverse an Array in Groups of Given															-
+
+Find Maximum Difference between Two Array													-
+
+Remove Duplicate Elements from Unsorted Array - Java										-
+
+Find Pairs in Array with Given Sum | Programming											-
+
+Two Sum Problem Java Code | Two Sum LeetCode												-
+
+Merge Two Sorted Arrays into a Third Sorted													-
+
+Find Common Elements in Three Sorted Arrays - Java											-
+
+Count Occurrences/Frequency of a Number in a Sorted Array									-
+
+Sort Array By Parity | Segregate Even and Odd Numbers										-
+
+Segregate 0s and 1s in an Array - Java and C Code											-
+
+Sort an Array of 0s, 1s and																	-
+
+Sort an Array of 0s, 1s, 2s in a Single Traversal											-
+
+What is Linked List | Array Vs Linked List | Insert Node at the Beginning					-
+
+Insertion Sort Algorithm and Insertion Sort Program in C and Java							-
+
+Bubble Sort Program using Recursion & Iterative												-
+
+Java Program to Reverse an Arrays 															-
+
+Plus One | LeetCode 66 | Add One to Number Represented as Array (×3 duplicates)				- 
+
+==================================================================================================================
+
+🔷 Medium (Intermediate - Involves Searching, Sorting, Sliding Window, or Binary Search)
+
+Find Majority Element in an Array (Majority Element)										-
+
+Find the Element that Appears Once in an Array												-
+
+Binary Search | LeetCode 704 | Java | Recursive												-
+
+Rotate an Array by K Steps (In-Place)														-
+
+Find First and Last Index of an Element in a Sorted Array									-
+
+Find First and Last Position of Element in Sorted Array										-
+
+Search an Element in a Sorted and Rotated Array												-
+
+Find the Element that Appears Once in a Sorted Array in O(logn)								-
+
+Find All Numbers Disappeared in an Array													-
+
+Find All Duplicates in Array (Multiple approaches and their time complexities)				-
+
+Find All Duplicates in an Array without using any Extra Space | LeetCode 442				-
+
+Find a Peak Element in an Array | LeetCode 162												-
+
+Find the Duplicate Number in an Array Without using Extra Space								-
+
+Product of Array Except Self | LeetCode 238													-
+
+Maximum Consecutive Ones in an Array of 0s and												-
+
+Maximum Consecutive Ones III (If K Flip is Allowed)											-
+
+Contiguous Array LeetCode | Largest Subarray with Equal Number of 0s and 1s					-
+
+Subarray with Given Sum | Non Negative Numbers												-
+
+Find the Length of Longest Increasing														-
+
+==================================================================================================================
+
+🔺 Hard (Advanced - Sliding Window, Greedy, Prefix Sum, Binary Search on Answer)
+
+Find Triplets with Zero Sum | 3Sum LeetCode Solution										-
+
+Find Triplet with Given Sum in an Array														-
+
+Maximum Subarray Sum (Algorithm & Java Code)												-
+
+Maximum of All Subarrays of Size K															-
+
+Find Top K Most Frequent Elements															-
+
+Minimum Size Subarray Sum (Smallest Subarray with Sum ≥ Value)								-
+
+Smallest Subarray with Sum Greater than or Equal to K (Target) | Sliding Window				-
+
+Best Time to Buy And Sell Stock to Get Maximum Profit - I									-
+
+Find Minimum Element in a Sorted and Rotated Array											-
+
+Group Anagrams Together | Explanation & Java												-
+
+Merge Overlapping Intervals																	-
+
+Minimum Number of Arrows to Burst Balloons													-
+
+Reverse Level Order Traversal of a Binary													-
