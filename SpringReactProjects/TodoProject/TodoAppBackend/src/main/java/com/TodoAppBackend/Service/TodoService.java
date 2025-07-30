@@ -1,8 +1,12 @@
 package com.TodoAppBackend.Service;
 
-import java.util.*;
+import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +20,12 @@ public class TodoService {
     private TodoRepository repo;
     
     // Fetching All the Tasks from the Database.
+
+    public Page<Todo> getPaginatedTasks(int page, int size) {
+        Pageable pageable = PageRequest.of(page, size, Sort.by("id").descending());
+        return repo.findAll(pageable);
+    }
+
     public List<Todo> getAllTasks() {
         return repo.findAll(Sort.by(Sort.Direction.DESC,"id"));
         // List<Todo> todos = repo.findAll();
@@ -24,7 +34,7 @@ public class TodoService {
         // }
         // return todos;
     }
-
+ 
     public Optional<Todo> getTaskId(int taskId){
         return repo.findById(taskId);
     }
