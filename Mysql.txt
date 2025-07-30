@@ -9,3 +9,23 @@ CREATE TABLE Books (
  						or
  FOREIGN KEY (AuthorID) REFERENCES Authors(AuthorID) ON DELETE CASCADE
 );
+
+{# How to Use Left Join, Right Join, Inner Join, Full Join, Cross Join #}
+SELECT Students.Name, Classes.ClassName
+FROM Students
+INNER JOIN Classes ON Students.ClassID = Classes.ClassID;
+						or
+LEFT JOIN Classes ON Students.ClassID = Classes.ClassID;
+						or
+RIGHT JOIN Classes ON Students.ClassID = Classes.ClassID;
+						or
+FULL JOIN Classes ON Students.ClassID = Classes.ClassID;
+						or
+CROSS JOIN Classes;
+
+
+
+SELECT Student.StudName, Courses.CourseName, Teacher.TechName
+from Student
+INNER Join Courses on Student.courseId = Courses.id
+INNER JOIN Teacher on Courses.techId = Teacher.id;
