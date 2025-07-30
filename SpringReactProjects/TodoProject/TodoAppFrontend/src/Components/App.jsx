@@ -4,6 +4,7 @@ import Tasks from "./Tasks"
 import CreateTask from "./CreateTask"
 import Header from "./Header"
 import PageNotFound from "./PageNotFound"
+import EditTask from './EditTask'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
     		<Route path="/" element={<Home/>}  />
     		<Route path="/tasks" element={<Tasks/>} />
     		<Route path="/tasks/create" element={<CreateTask/>} />
+			<Route path='/tasks/edit/:id' element={<EditTask />} />
     		<Route path="*" element={<PageNotFound/>} />
     	</Routes>
     </BrowserRouter>
