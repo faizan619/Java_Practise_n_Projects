@@ -1,0 +1,11 @@
+Commands
+
+{# How to Create Foreign Key #}
+CREATE TABLE Books (
+ BookID INT PRIMARY KEY,
+ Title VARCHAR(100),
+ AuthorID INT,
+ FOREIGN KEY (AuthorID) REFERENCES Authors(AuthorID) ON DELETE SET NULL
+ 						or
+ FOREIGN KEY (AuthorID) REFERENCES Authors(AuthorID) ON DELETE CASCADE
+);
