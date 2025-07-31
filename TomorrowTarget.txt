@@ -7,4 +7,4 @@ Note : Always Try to Write the Todo you going to do Tomorrow.
 3) Create Setup of Billing Application Frontend And Backend			-
 4) Learn 10 Git Commands and 10 Docker Commands						-
 5) Create and Upload a Vlog.										-
-6) Apply in 1 Company												-
+6) Create your Polish Resume										-
