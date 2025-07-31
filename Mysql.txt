@@ -1,31 +1,114 @@
 Commands
 
 {# How to Create Foreign Key #}
-CREATE TABLE Books (
- BookID INT PRIMARY KEY,
- Title VARCHAR(100),
- AuthorID INT,
- FOREIGN KEY (AuthorID) REFERENCES Authors(AuthorID) ON DELETE SET NULL
- 						or
- FOREIGN KEY (AuthorID) REFERENCES Authors(AuthorID) ON DELETE CASCADE
-);
+	CREATE TABLE Books (
+	 BookID INT PRIMARY KEY,
+	 Title VARCHAR(100),
+	 AuthorID INT,
+	 FOREIGN KEY (AuthorID) REFERENCES Authors(AuthorID) ON DELETE SET NULL
+	 						or
+	 FOREIGN KEY (AuthorID) REFERENCES Authors(AuthorID) ON DELETE CASCADE
+	);
 
 {# How to Use Left Join, Right Join, Inner Join, Full Join, Cross Join #}
-SELECT Students.Name, Classes.ClassName
-FROM Students
-INNER JOIN Classes ON Students.ClassID = Classes.ClassID;
-						or
-LEFT JOIN Classes ON Students.ClassID = Classes.ClassID;
-						or
-RIGHT JOIN Classes ON Students.ClassID = Classes.ClassID;
-						or
-FULL JOIN Classes ON Students.ClassID = Classes.ClassID;
-						or
-CROSS JOIN Classes;
+	SELECT Students.Name, Classes.ClassName
+	FROM Students
+	INNER JOIN Classes ON Students.ClassID = Classes.ClassID;
+							or
+	LEFT JOIN Classes ON Students.ClassID = Classes.ClassID;
+							or
+	RIGHT JOIN Classes ON Students.ClassID = Classes.ClassID;
+							or
+	FULL JOIN Classes ON Students.ClassID = Classes.ClassID;
+							or
+	CROSS JOIN Classes;
 
 
 
-SELECT Student.StudName, Courses.CourseName, Teacher.TechName
-from Student
-INNER Join Courses on Student.courseId = Courses.id
-INNER JOIN Teacher on Courses.techId = Teacher.id;
+	SELECT Student.StudName, Courses.CourseName, Teacher.TechName
+	from Student
+	INNER Join Courses on Student.courseId = Courses.id
+	INNER JOIN Teacher on Courses.techId = Teacher.id;
+
+CREATE TABLE employees (
+    emp_id INT PRIMARY KEY,
+    emp_name VARCHAR(50),
+    department VARCHAR(50),
+    salary INT,
+    hire_date DATE
+);
+
+INSERT INTO employees VALUES
+(101, 'Alice',    'HR',        50000, '2020-01-15'),
+(102, 'Bob',      'Finance',   60000, '2019-03-10'),
+(103, 'Charlie',  'IT',        75000, '2021-06-21'),
+(104, 'David',    'Finance',   60000, '2022-08-14'),
+(105, 'Eva',      'IT',        90000, '2018-11-30'),
+(106, 'Frank',    'HR',        50000, '2017-09-25'),
+(107, 'Grace',    'IT',        85000, '2020-04-05'),
+(108, 'Heidi',    'Marketing', 40000, '2019-07-12'),
+(109, 'Ivan',     'IT',        75000, '2023-01-02'),
+(110, 'Judy',     'Marketing', 40000, '2016-10-18'),
+(111, 'Kevin',    'Finance',   68000, '2017-12-11'),
+(112, 'Laura',    'HR',        55000, '2022-01-20'),
+(113, 'Mallory',  'IT',        75000, '2023-03-22'),
+(114, 'Niaj',     'Finance',   71000, '2018-04-19'),
+(115, 'Oscar',    'HR',        50000, '2019-11-01'),
+(116, 'Peggy',    'IT',        88000, '2020-06-10'),
+(117, 'Quentin',  'IT',        90000, '2021-09-14'),
+(118, 'Rita',     'Marketing', 42000, '2022-07-07'),
+(119, 'Sybil',    'Finance',   71000, '2017-02-08'),
+(120, 'Trent',    'HR',        55000, '2016-03-03');
+
+
+CREATE TABLE departments (
+    dept_id INT PRIMARY KEY,
+    dept_name VARCHAR(50),
+    location VARCHAR(50)
+);
+
+INSERT INTO departments VALUES
+(1, 'HR',        'New York'),
+(2, 'Finance',   'Chicago'),
+(3, 'IT',        'San Francisco'),
+(4, 'Marketing', 'Los Angeles'),
+(5, 'Sales',     'Seattle'); -- No employee in Sales
+
+
+CREATE TABLE projects (
+    project_id INT PRIMARY KEY,
+    project_name VARCHAR(50),
+    emp_id INT,  -- Foreign key to employees
+    status VARCHAR(20)
+);
+
+
+INSERT INTO projects VALUES
+(201, 'Alpha',   101, 'Ongoing'),
+(202, 'Beta',    103, 'Completed'),
+(203, 'Gamma',   105, 'Ongoing'),
+(204, 'Delta',   107, 'Ongoing'),
+(205, 'Sigma',   102, 'Completed'),
+(206, 'Epsilon', 109, 'Ongoing'),
+(207, 'Omega',   110, 'Ongoing'),
+(208, 'Zeta',    120, 'Completed'),
+(209, 'Theta',   108, 'Ongoing'),
+(210, 'Kappa',   115, 'On Hold');
+
+
+{# Find the Nth Highest Salary of Employee #}
+
+	{# First Highest Salary #}
+	SELECT emp_id,emp_name,max(salary) from interview_emp;
+
+	{# Second Highest Salary #}
+	SELECT emp_id,emp_name,max(salary) from interview_emp WHERE salary < (SELECT max(salary) from interview_emp);
+
+	{# Find 10th Highest Salary #}
+	SELECT DISTINCT(salary) from interview_emp ORDER BY salary desc limit 9,1;
+
+	{# There is two same salary in 5 ,6 and 7 so the 8th salary is 6th highest salary find that #}
+	SELECT DISTINCT(salary) from interview_emp ORDER BY salary limit 5,1
+
+	{# Find 6th highest salary without limit #}
+	SELECT salary from interview_emp e1 where 5 = (SELECT COUNT(DISTINCT(salary)) from interview_emp e2 where e2.salary > e1.salary);
