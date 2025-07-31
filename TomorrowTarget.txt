@@ -2,9 +2,9 @@ Note : Always Try to Write the Todo you going to do Tomorrow.
 
 {# Tomorrow Tasks - 31 July 2025 #}
 
-1) Try to Complete SQl PDF [ Page 20 - Page 30 ]					-
-2) Practise 10 Sql Queries.											-
-3) Create Setup of Billing Application Frontend And Backend			-
-4) Learn 10 Git Commands and 10 Docker Commands						-
-5) Create and Upload a Vlog.										-
+1) Try to Complete SQl PDF [ Page 20 - Page 30 ]					- 
+2) Practise 10 Sql Queries.											- 
+3) Create Setup of Billing Application Frontend And Backend			- 
+4) Learn 10 Git Commands and 10 Docker Commands						- 
+5) Create and Upload a Vlog.										- Done
 6) Create your Polish Resume										-

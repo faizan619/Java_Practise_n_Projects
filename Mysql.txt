@@ -112,3 +112,50 @@ INSERT INTO projects VALUES
 
 	{# Find 6th highest salary without limit #}
 	SELECT salary from interview_emp e1 where 5 = (SELECT COUNT(DISTINCT(salary)) from interview_emp e2 where e2.salary > e1.salary);
+
+{# Join Query #}
+
+	{# Find the Name of department where more than 5 employee are working #}
+	SELECT departments.dept_name, COUNT(employees.department) from departments
+	INNER JOIN employees ON employees.department = departments.dept_name GROUP BY departments.dept_name HAVING COUNT(employees.department) > 5;
+
+	{# Calculate the average salary of each department which is higher than 75000. find department name also in decending order #}
+
+
+	{# Find those Employee whose salary exists between 35000 to 90000 with Department and Manager Name #}
+
+	{# Retrieve employee names along with their department names. #}
+
+
+	{# List all departments even if they have no employees #}
+
+
+	{# Find employees who are not assigned to any department. #}
+
+
+	{# Find the total salary paid by each department #}
+
+
+	{# List employees who work in the same department as 'Alice'. #}
+
+
+	{# Find employees and their project names (many-to-many using a junction table) #}
+
+
+	{# List employees who don't have any assigned projects. #}
+
+
+	{# Find the department with the highest number of employees. #}
+
+
+	{# List departments with average salary above overall company average #}
+
+
+	{# Find employees who share the same job title but work in different departments. #}
+
+
+	{# Find projects that have more than 3 employees working on them. #}
+
+	
+	{# List employees along with their department and project details. #}
+
