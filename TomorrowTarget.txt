@@ -4,7 +4,11 @@ Note : Always Try to Write the Todo you going to do Tomorrow.
 
 1) Try to Complete SQl PDF [ Page 20 - Page 30 ]					- 
 2) Practise 10 Sql Queries.											- 
-3) Create Setup of Billing Application Frontend And Backend			- 
+3) Create Setup of Billing Application Frontend And Backend			- Done
 4) Learn 10 Git Commands and 10 Docker Commands						- 
 5) Create and Upload a Vlog.										- Done
-6) Create your Polish Resume										-
+6) Create your Polish Resume										- 
+
+EXTRA
+7) Completed the Model part and Repository part                     - Done
+8) Created the GetAllCustomer Method and GetCustomerById Method     - Done
