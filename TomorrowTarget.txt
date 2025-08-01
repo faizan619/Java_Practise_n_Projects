@@ -5,12 +5,13 @@ Note : Always Try to Write the Todo you going to do Tomorrow.
 1) Try to Complete SQL PDF [ Page 20 - Page 30 ]					- 
 2) Practise 10 Sql Commands on Joins								- 
 3) Learn any 10 Git And Docker Commands								- 
-4) Create the Post and Delete Method in SpringBoot					- Done
-5) Build the Customer UI of Form and GRID							- 
+4) Create the Post and Delete Method of Customer in SpringBoot		- Done
+5) Build the Customer UI of Form and GRID							- Frontend Skip For Now.
 6) Apply in any 1 Company and Maintain Record						- 
 
 EXTRA
 7) Create the Put Method in SpringBoot                              - Done
+8) Created the Product CRUD Method                                  - Done
 
 {# 31 July 2025 #}
 
@@ -24,3 +25,69 @@ EXTRA
 EXTRA
 7) Completed the Model part and Repository part                     - Done
 8) Created the GetAllCustomer Method and GetCustomerById Method     - Done
+
+PS D:\faizan_alam_projects\Learning\java\Java_Practise_n_Projects\SpringReactProjects\billingApplication> $response = Invoke-RestMethod -Uri "https://api.github.com/repos/faizan619/Codo-File/stargazers"
+PS D:\faizan_alam_projects\Learning\java\Java_Practise_n_Projects\SpringReactProjects\billingApplication> $response | ForEach-Object { $_.login }
+
+
+--------------------------------------------------------------------------------------------------
+
+$page = 1
+$allStargazers = @()
+
+do {
+    $url = "https://api.github.com/repos/faizan619/Codo-File/stargazers?page=$page"
+    $response = Invoke-RestMethod -Uri $url
+
+    if ($response.Count -eq 0) { break }
+
+    $allStargazers += $response
+    $page++
+} while ($true)
+
+# Output all usernames
+$allStargazers | ForEach-Object { $_.login }
+
+# Optional: Export to CSV
+$allStargazers | Select-Object login | Export-Csv -Path "stargazers.csv" -NoTypeInformation
+
+
+--------------------------------------------------------------------------------------------------
+
+TYCSRoyalCollege
+GOJOSATORU1999
+Slowburn75
+ankita-2021
+mdmonauwarulislam
+cricgok
+Suddhu018
+Aamish8Malik
+yash-a06
+ujjawalkr67
+shankyg0el
+Ansari-Irfan-360
+Mayuri239305
+YashviShahh
+Freenahihu
+BurnzzWNL
+techTenzen
+Himanshuch8055
+viveksheela07
+2004shweta
+umar-ali-0311
+venkata-sekhar
+Varugowdatp
+vikashmauryagit
+rajnayan07
+Aravindkumar582
+Sparsh12321
+Sanidhya2653
+Piyush-18
+rupak1811
+zainlatif
+AdnanQureshi3
+bhaargav04
+Prakhar2025
+yashgoyani29
+benson46
+faizan619
