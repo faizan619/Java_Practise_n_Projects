@@ -1,0 +1,48 @@
+This roadmap can vary based on how quickly you grasp concepts and how deep you want to go into security. Security is an ongoing learning process because new vulnerabilities and solutions emerge over time.
+
+
+
+📦 Example Without ResponseEntity (Basic)
+@GetMapping("/users/{id}")
+public User getUser(@PathVariable int id) {
+    return userService.getUserById(id);
+}
+
+✅ Better: With ResponseEntity
+@GetMapping("/users/{id}")
+public ResponseEntity<?> getUser(@PathVariable int id) {
+    Optional<User> user = userService.findById(id);
+    
+    if (user.isPresent()) {
+        return ResponseEntity.ok(user.get()); // 200 OK
+    } else {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                             .body("User not found");
+    }
+}
+
+in react
+axios.get("http://localhost:8080/users/123")
+  .then(res => console.log(res.data))
+  .catch(err => {
+    if (err.response?.status === 404) {
+      alert("User not found");
+    }
+  });
+
+
+for put and post
+@PostMapping("/users")
+public ResponseEntity<?> createUser(@RequestBody User user) {
+    User saved = userService.save(user);
+    return ResponseEntity.status(HttpStatus.CREATED).body(saved);
+}
+
+@DeleteMapping("/users/{id}")
+public ResponseEntity<?> deleteUser(@PathVariable int id) {
+    if (!userService.existsById(id)) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found");
+    }
+    userService.deleteById(id);
+    return ResponseEntity.ok("Deleted successfully");
+}
