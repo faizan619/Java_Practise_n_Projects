@@ -5,9 +5,12 @@ Note : Always Try to Write the Todo you going to do Tomorrow.
 1) Try to Complete SQL PDF [ Page 20 - Page 30 ]					- 
 2) Practise 10 Sql Commands on Joins								- 
 3) Learn any 10 Git And Docker Commands								- 
-4) Create the Post and Delete Method in SpringBoot					- 
+4) Create the Post and Delete Method in SpringBoot					- Done
 5) Build the Customer UI of Form and GRID							- 
-6) Apply in any 1 Company and Maintain Record						-
+6) Apply in any 1 Company and Maintain Record						- 
+
+EXTRA
+7) Create the Put Method in SpringBoot                              - Done
 
 {# 31 July 2025 #}
 
