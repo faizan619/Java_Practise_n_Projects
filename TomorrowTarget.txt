@@ -1,15 +1,24 @@
 Note : Always Try to Write the Todo you going to do Tomorrow.
 
-{# Tomorrow Task -  2 August 2025 #}
+{# 3 August 2025 #}
 
-1) Start with Spring Boot. Complete About 5 Videos                  - Done
+1) Do Some Practise of Spring Boot.                                 - Done
+2) Do Some Practise of Spring Security                              - 
+3) Create the Vlog                                                  - Done
+4) Finilize the Resume.                                             - 
+5) Complete Java Concepts                                           - 
+6) Do one Question of DSA                                           - 
+
+{# 2 August 2025 #}
+
+1) Start with Spring Boot Security. Complete About 5 Videos         - Done
 2) Create a Vlog and Upload                                         - Done
-3) Practise about 1 hour in Spring Boot or Read Other Code          - 
-4) Practise Mysql Theory + Code                                     -
+3) Practise about 1 hour in Spring Boot or Read Other Code          - Done
+4) Practise Mysql Theory + Code                                     - 
 5) Pracitse Docker and Git Commands                                 -
 6) Try to do one LeetCode Question                                  -
 
-{# Tomorrow Task - 1 August 2025 #}
+{# 1 August 2025 #}
 
 1) Try to Complete SQL PDF [ Page 20 - Page 30 ]					- 
 2) Practise 10 Sql Commands on Joins								- 
