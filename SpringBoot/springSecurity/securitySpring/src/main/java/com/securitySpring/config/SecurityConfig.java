@@ -47,7 +47,11 @@ public class SecurityConfig {
         http.csrf(customizer -> customizer.disable());
 
         // it will only to access only then authenticated users
-        http.authorizeHttpRequests(request -> request.anyRequest().authenticated());
+        http.authorizeHttpRequests(request -> request
+                                                    .requestMatchers("register","login")
+                                                    .permitAll()
+                                                    .anyRequest().authenticated()
+                                );
 
         // this will give a default form to enter the login credentials
         http.formLogin(Customizer.withDefaults());
