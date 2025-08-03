@@ -3,11 +3,11 @@ Note : Always Try to Write the Todo you going to do Tomorrow.
 {# 3 August 2025 #}
 
 1) Do Some Practise of Spring Boot.                                 - Done
-2) Do Some Practise of Spring Security                              - 
+2) Do Some Practise of Spring Security                              - Done
 3) Create the Vlog                                                  - Done
 4) Finilize the Resume.                                             - 
 5) Complete Java Concepts                                           - 
-6) Do one Question of DSA                                           - 
+6) Do one Question of DSA                                           - Done
 
 {# 2 August 2025 #}
 
