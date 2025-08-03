@@ -32,7 +32,7 @@ public class UserPrincipal implements UserDetails {
     @Override
     public String getUsername() {
         // throw new UnsupportedOperationException("Not supported yet.");
-        return user.getName();
+        return user.getEmail();
     }
 
     @Override
