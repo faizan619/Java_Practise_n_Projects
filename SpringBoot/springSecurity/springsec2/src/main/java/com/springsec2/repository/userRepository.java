@@ -17,6 +17,7 @@ public interface userRepository extends JpaRepository<User, Integer> {
     @Query("SELECT q FROM User q where q.role = 'USER' ORDER BY q.id DESC")
     List<User> getAllUserRole();
 
-    User findByUsername(String email);
+    // User findByUsername(String email);
+    User findByEmail(String email);
 
 }
