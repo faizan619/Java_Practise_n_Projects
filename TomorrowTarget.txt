@@ -3,7 +3,7 @@ Note : Always Try to Write the Todo you going to do Tomorrow.
 {# 4 August 2025 #}
 
 1) Do Some Practise of Spring Boot                                  - 
-2) Do Some Practise of Spring Security                              - 
+2) Do Practise of MySql Theory                                      - 
 3) Apply in 3 Company                                               - Done
 4) interview question for git and Docker                            - 
 5) 10 Command of Docker and Git                                     - 
