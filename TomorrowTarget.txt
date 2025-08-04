@@ -1,11 +1,22 @@
 Note : Always Try to Write the Todo you going to do Tomorrow.
 
+{# 4 August 2025 #}
+
+1) Do Some Practise of Spring Boot                                  - 
+2) Do Some Practise of Spring Security                              - 
+3) Apply in 3 Company                                               - Done
+4) interview question for git and Docker                            - 
+5) 10 Command of Docker and Git                                     - 
+6) Create a Vlog                                                    - Done
+EXTRA
+6) Apply for one referral also                                      - Done
+
 {# 3 August 2025 #}
 
 1) Do Some Practise of Spring Boot.                                 - Done
 2) Do Some Practise of Spring Security                              - Done
 3) Create the Vlog                                                  - Done
-4) Finilize the Resume.                                             - 
+4) Finilize the Resume.                                             - Done
 5) Complete Java Concepts                                           - 
 6) Do one Question of DSA                                           - Done
 
