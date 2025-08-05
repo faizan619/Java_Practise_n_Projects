@@ -10,3 +10,20 @@ Technology               |              Coding              |               Inte
 5) Git & Github          |                                  |
 6) Docker                |                                  |
 -----------------------------------------------------------------------------------------------------------------|
+
+
+@Column Attributes
+--------------------------------------------------------------------------------------------------------------------------------------
+| Attribute          | Type      | Description                                                                                       |
+| ------------------ | --------- | ------------------------------------------------------------------------------------------------- |
+| `name`             | `String`  | Specifies the name of the column in the database. If omitted, the field name is used.             |
+| `unique`           | `boolean` | Whether the column should have a unique constraint. Default is `false`.                           |
+| `nullable`         | `boolean` | Whether the column can contain `NULL` values. Default is `true`.                                  |
+| `insertable`       | `boolean` | Whether the column should be included in SQL `INSERT` statements. Default is `true`.              |
+| `updatable`        | `boolean` | Whether the column should be included in SQL `UPDATE` statements. Default is `true`.              |
+| `length`           | `int`     | Sets the column length for `String`-based columns (e.g., `VARCHAR(255)`). Default is `255`.       |
+| `precision`        | `int`     | For decimal values: total number of digits. Default is `0`.                                       |
+| `scale`            | `int`     | For decimal values: number of digits to the right of the decimal point. Default is `0`.           |
+| `columnDefinition` | `String`  | Allows you to specify the exact SQL used for the column definition.                               |
+| `table`            | `String`  | Specifies the name of the table that contains the column if it's different from the entity table. |
+--------------------------------------------------------------------------------------------------------------------------------------
