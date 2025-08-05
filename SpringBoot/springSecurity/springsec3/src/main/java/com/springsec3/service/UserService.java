@@ -68,7 +68,7 @@ public class UserService{
 
     // Remove the Particular user By Id;
     public String deleteUserData(int userId){
-        if(repo.existsByid(userId)){
+        if(repo.existsById(userId)){
             repo.deleteById(userId);
             return "User Data is Deleted Successfully!";
         }
