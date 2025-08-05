@@ -57,7 +57,7 @@ public class UserService{
                 update.setPassword(user.getPassword());
                 update.setRole(user.getRole());
                 update.setAge(user.getAge());
-                repo.save(user);
+                repo.save(update);
                 return user.getName()+" Data is Successfully Updated";
             }
         }

@@ -63,4 +63,9 @@ public class UserController{
         return service.deleteUserData(userId);
     }
 
+    @RequestMapping("/**")
+    public String WrongURL(){
+        return "Sorry the GIVEN URL is not Available!";
+    }
+
 }

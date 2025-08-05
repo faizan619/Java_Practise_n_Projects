@@ -18,4 +18,6 @@ public interface UserRepository extends JpaRepository<User, Integer>{
 
     @Query("SELECT p FROM User p WHERE p.createdAt BETWEEN :from AND :to ORDER BY p.id DESC")
     List<User> findUserByDates(@Param("from") LocalDateTime from, @Param("to") LocalDateTime to);
+
+    User findByUsername(String username);
 }
