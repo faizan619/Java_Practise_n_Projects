@@ -1,13 +1,19 @@
 Note : Always Try to Write the Todo you going to do Tomorrow.
 
+{# 5 August 2025 #}
+
+1) apply in 2 Company												-
+2) Complete 20 Github and Git interview Questions					-
+3) Create Users Crud Spring Boot Application						-
+4) Create a Vlog													-
+
 {# 4 August 2025 #}
 
 1) Do Some Practise of Spring Boot                                  - 
-2) Do Practise of MySql Theory                                      - 
-3) Apply in 3 Company                                               - Done
-4) interview question for git and Docker                            - 
-5) 10 Command of Docker and Git                                     - 
-6) Create a Vlog                                                    - Done
+2) Apply in 3 Company                                               - Done
+3) interview question for git 			                            - 
+4) 10 Command of Git                                     			- Done 
+5) Create a Vlog                                                    - Done
 EXTRA
 6) Apply for one referral also                                      - Done
 
