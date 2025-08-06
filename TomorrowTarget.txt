@@ -4,10 +4,11 @@ Note : Always Try to Write the Todo you going to do Tomorrow.
 {# 6 August 2025 #}
 
 1) Try to Complete All Docker Commands not docker compose           - 
-2) Practise Spring Boot (New Concept)                               - 
+2) Practise Spring Boot (New Concept)                               - Done 
 3) Practise Spring Security                                         - 
 4) Create a Vlog                                                    - 
-5) Apply in 2 Company or Referral                                   - 
+5) Apply in Company or Referral                                     - Done
+
 
 {# 5 August 2025 #}
 
