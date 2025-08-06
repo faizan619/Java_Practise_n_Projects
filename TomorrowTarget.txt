@@ -5,8 +5,8 @@ Note : Always Try to Write the Todo you going to do Tomorrow.
 
 1) Try to Complete All Docker Commands not docker compose           - 
 2) Practise Spring Boot (New Concept)                               - Done 
-3) Practise Spring Security                                         - 
-4) Create a Vlog                                                    - 
+3) Practise Spring Security                                         - Done
+4) Create a Vlog                                                    - Done
 5) Apply in Company or Referral                                     - Done
 
 
