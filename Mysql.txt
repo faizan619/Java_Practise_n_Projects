@@ -1,3 +1,117 @@
+CREATE TABLE Departments (
+    dept_id INT PRIMARY KEY,
+    dept_name VARCHAR(50)
+);
+
+INSERT INTO Departments (dept_id, dept_name) VALUES
+	(1, 'Engineering'),
+	(2, 'Marketing'),
+	(3, 'Sales'),
+	(4, 'HR');
+
+CREATE TABLE Employees (
+    emp_id INT PRIMARY KEY,
+    emp_name VARCHAR(50),
+    dept_id INT,
+    manager_id INT,
+    FOREIGN KEY (dept_id) REFERENCES Departments(dept_id)
+);
+
+INSERT INTO Employees (emp_id, emp_name, dept_id, manager_id) VALUES
+	(101, 'Alice', 1, NULL),
+	(102, 'Bob', 1, 101),
+	(103, 'Charlie', 2, 101),
+	(104, 'David', 2, 103),
+	(105, 'Eve', 3, 101),
+	(106, 'Frank', NULL, NULL); -- no department
+
+CREATE TABLE Projects (
+    project_id INT PRIMARY KEY,
+    project_name VARCHAR(100),
+    emp_id INT,
+    FOREIGN KEY (emp_id) REFERENCES Employees(emp_id)
+);
+
+INSERT INTO Projects (project_id, project_name, emp_id) VALUES
+	(201, 'Project A', 102),
+	(202, 'Project B', 103),
+	(203, 'Project C', 105),
+	(204, 'Project D', NULL), -- no employee assigned
+	(205, 'Project E', 104); -- invalid emp_id (foreign key may fail)
+
+Inner Joins
+-- Q1: List employee names and their department names.						
+	SELECT Employees.emp_name, Departments.dept_name from Employees
+	INNER JOIN Departments WHERE Employees.dept_id = Departments.dept_id		
+
+-- Q2: Show project names and the employee names working on them.										
+	SELECT Projects.project_name, Employees.emp_name FROM Projects
+	INNER JOIN Employees WHERE Projects.emp_id = Employees.emp_id limit 30
+
+-- Q3: List departments and the number of employees in each.
+	SELECT Departments.dept_name as Deptartment_name, COUNT(Employees.dept_id) AS total_employee FROM Departments
+	INNER JOIN Employees WHERE Departments.dept_id = Employees.dept_id GROUP BY Employees.dept_id
+
+-- Q4: List all employees who have been assigned to projects.
+	SELECT Employees.emp_name, Projects.project_name from Employees
+	INNER JOIN Projects WHERE Employees.emp_id = Projects.emp_id
+-- Q5: Show each employee’s name and their manager’s name.
+-- Q6: List employees with their departments and assigned project names.
+-- Q7: Show departments with at least one employee assigned.
+-- Q8: List employees who belong to departments and also have projects.
+-- Q9: Find employees whose project and department both exist.
+-- Q10: Show each employee with both department name and project name.
+
+Left Join
+-- Q1: List all employees and their department names (including those with no dept).
+-- Q2: Show all employees and their project names (including unassigned).
+-- Q3: List all departments and their employees (even if no employees).
+-- Q4: Show all projects and employee names (even if no employee is assigned).
+-- Q5: Get all employees and their manager names (even if no manager).
+-- Q6: List departments and total number of employees (even if 0).
+-- Q7: Show all employees and project names (null if no project).
+-- Q8: Get all employees and assigned projects; show null if no match.
+-- Q9: Show projects and employee departments (null if not assigned).
+-- Q10: Get employee names and manager names, including those without a manager.
+
+Right Join
+-- Q1: List all departments and employees (even if no employee in that dept).
+-- Q2: Show all projects and employee names (even if project has no assigned emp).
+-- Q3: Get all projects with employee department names (include unassigned).
+-- Q4: List employees and their departments using RIGHT JOIN.
+-- Q5: Show employees and their projects (include projects with no employees).
+-- Q6: List all departments and whether they have employees.
+-- Q7: Show employees with department names, right join way.
+-- Q8: Get all projects and assigned employees, include projects with null emp_id.
+-- Q9: List departments and their employees sorted by dept_id.
+-- Q10: Show all projects with employee and department info.
+
+Self Join
+-- Q1: List all employees and their managers (using manager_id).
+-- Q2: Show names of employees and their manager names.
+-- Q3: Get employees who are managers.
+-- Q4: List employee-manager pairs.
+-- Q5: Show employees who have the same manager.
+-- Q6: Find employees who report to the same manager as 'Bob'.
+-- Q7: Count how many people report to each manager.
+-- Q8: Get employees whose managers are in a different department.
+-- Q9: List all employees with NULL manager.
+-- Q10: Show hierarchy: employee -> manager -> manager’s manager.
+
+Interview on Joins
+1. What is the difference between INNER JOIN and LEFT JOIN?
+2. When would you prefer RIGHT JOIN over LEFT JOIN?
+3. Explain SELF JOIN and give a real-life example.
+4. What happens when there is no matching row in a JOIN?
+5. How can you join a table with itself?
+6. What’s the difference between JOIN and UNION?
+7. Can INNER JOIN return NULLs?
+8. How do you identify unmatched rows using LEFT JOIN?
+9. What is a Cartesian product in JOIN?
+10. What are different types of JOINs in SQL and their use cases?
+
+
+
 Commands
 
 {# How to Create Foreign Key #}

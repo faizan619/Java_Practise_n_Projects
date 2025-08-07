@@ -1,17 +1,3 @@
-Technology Ready for Interview
-
-----------------------------------------------------------------------------------------------------------------|
-Technology               |              Coding              |               Interview                           |
-------------------------------------------------------------|---------------------------------------------------|
-1) Spring Boot           |                                  |
-2) Spring Security       |                                  |
-3) Java                  |                                  |
-4) Mysql                 |                                  |
-5) Git & Github          |                                  |
-6) Docker                |                                  |
------------------------------------------------------------------------------------------------------------------|
-
-
 @Column Attributes
 --------------------------------------------------------------------------------------------------------------------------------------
 | Attribute          | Type      | Description                                                                                       |
@@ -38,111 +24,111 @@ Technology               |              Coding              |               Inte
 5) Learn Pagination
 
 #### [ 1 ],[ 2 ],[ 3 ]
-package com.example.EmployeeManagementSystem.controller;
+	package com.example.EmployeeManagementSystem.controller;
 
-import com.example.EmployeeManagementSystem.dto.DtoEmployee;
-import com.example.EmployeeManagementSystem.model.Employee;
-import com.example.EmployeeManagementSystem.service.ServiceEmployee;
-import com.example.EmployeeManagementSystem.service.ServiceEmployeeIn;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import java.util.List;
-@RestController
-@CrossOrigin("*")
-@RequestMapping("api/employee")
-public class ControllerEmployee {
-    @Autowired
-    private ServiceEmployeeIn serviceEmployee;
-    private DtoEmployee updatedemployee;
-    @PostMapping
-     public ResponseEntity<DtoEmployee> createEmployee(@RequestBody DtoEmployee dtaEmployee){
-        DtoEmployee e=serviceEmployee.createEmployee(dtaEmployee);
-        return new ResponseEntity<>(e, HttpStatus.CREATED);
-    }
-    @GetMapping("/{id}")
-        public ResponseEntity<DtoEmployee> findById(@PathVariable("id") int id){
-        DtoEmployee e=serviceEmployee.findById(id);
-        return new ResponseEntity<>(e,HttpStatus.OK);
-    }
-    @GetMapping
-    public ResponseEntity<List<DtoEmployee>> findAllEmployee(){
-        List<DtoEmployee> employes =serviceEmployee.findAllEmployee();
-        return new ResponseEntity<>(employes,HttpStatus.OK);
-    }
-    @PutMapping("/{id}")
-    public ResponseEntity<DtoEmployee> updateEmployee(@PathVariable("id") int id,@RequestBody DtoEmployee updatedemployee){
-        DtoEmployee updatedemp = serviceEmployee.updateEmployee(id,updatedemployee);
-        return new ResponseEntity<>(updatedemp,HttpStatus.OK);
-    }
-    @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteEmployee(@PathVariable("id") int id){
-        serviceEmployee.deleteEmployee(id);
-        return ResponseEntity.ok("This Employee is Deleted successfully");
-    }
-}
+	import com.example.EmployeeManagementSystem.dto.DtoEmployee;
+	import com.example.EmployeeManagementSystem.model.Employee;
+	import com.example.EmployeeManagementSystem.service.ServiceEmployee;
+	import com.example.EmployeeManagementSystem.service.ServiceEmployeeIn;
+	import org.springframework.beans.factory.annotation.Autowired;
+	import org.springframework.http.HttpStatus;
+	import org.springframework.http.ResponseEntity;
+	import org.springframework.web.bind.annotation.*;
+	import org.springframework.web.bind.annotation.CrossOrigin;
+	import java.util.List;
+	@RestController
+	@CrossOrigin("*")
+	@RequestMapping("api/employee")
+	public class ControllerEmployee {
+	    @Autowired
+	    private ServiceEmployeeIn serviceEmployee;
+	    private DtoEmployee updatedemployee;
+	    @PostMapping
+	     public ResponseEntity<DtoEmployee> createEmployee(@RequestBody DtoEmployee dtaEmployee){
+	        DtoEmployee e=serviceEmployee.createEmployee(dtaEmployee);
+	        return new ResponseEntity<>(e, HttpStatus.CREATED);
+	    }
+	    @GetMapping("/{id}")
+	        public ResponseEntity<DtoEmployee> findById(@PathVariable("id") int id){
+	        DtoEmployee e=serviceEmployee.findById(id);
+	        return new ResponseEntity<>(e,HttpStatus.OK);
+	    }
+	    @GetMapping
+	    public ResponseEntity<List<DtoEmployee>> findAllEmployee(){
+	        List<DtoEmployee> employes =serviceEmployee.findAllEmployee();
+	        return new ResponseEntity<>(employes,HttpStatus.OK);
+	    }
+	    @PutMapping("/{id}")
+	    public ResponseEntity<DtoEmployee> updateEmployee(@PathVariable("id") int id,@RequestBody DtoEmployee updatedemployee){
+	        DtoEmployee updatedemp = serviceEmployee.updateEmployee(id,updatedemployee);
+	        return new ResponseEntity<>(updatedemp,HttpStatus.OK);
+	    }
+	    @DeleteMapping("/{id}")
+	    public ResponseEntity<String> deleteEmployee(@PathVariable("id") int id){
+	        serviceEmployee.deleteEmployee(id);
+	        return ResponseEntity.ok("This Employee is Deleted successfully");
+	    }
+	}
 ####
 #### [ 4 ]
 
-@Entity
-public class User 
-{
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int u_id;
-
-	private String uname;
-	private String uemail;
-	private String upassword;
-	private Long unumber;
-@OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
-	private List<Orders> orders; 	
-}
-
-
-@Entity
-public class Orders
-{
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int oId;
-	private String oName;
-	private double oPrice;
-	private int oQuantity;
-	private Date orderDate;
-	private double totalAmmout;
-	
-	@ManyToOne
-	@JoinColumn(name="user_u_id")
-	private User user;
-	
-	public boolean validateAdminCredentials(String email,String password)
+	@Entity
+	public class User 
 	{
-		Admin admin=adminRepository.findByAdminEmail(email);
-		if(admin!=null && admin.getAdminPassword().equals(password))
-		{
-			return true;
-		}
-		return false;
+		@Id
+		@GeneratedValue(strategy = GenerationType.IDENTITY)
+		private int u_id;
+
+		private String uname;
+		private String uemail;
+		private String upassword;
+		private Long unumber;
+	@OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
+		private List<Orders> orders; 	
 	}
-}
+
+
+	@Entity
+	public class Orders
+	{
+		@Id
+		@GeneratedValue(strategy = GenerationType.AUTO)
+		private int oId;
+		private String oName;
+		private double oPrice;
+		private int oQuantity;
+		private Date orderDate;
+		private double totalAmmout;
+		
+		@ManyToOne
+		@JoinColumn(name="user_u_id")
+		private User user;
+		
+		public boolean validateAdminCredentials(String email,String password)
+		{
+			Admin admin=adminRepository.findByAdminEmail(email);
+			if(admin!=null && admin.getAdminPassword().equals(password))
+			{
+				return true;
+			}
+			return false;
+		}
+	}
 ####
 #### [ 5 ]
 
-@Service
-public class TodoService {
+	@Service
+	public class TodoService {
 
-    @Autowired
-    private TodoRepository repo;
-    
-    // Fetching All the Tasks from the Database.
+	    @Autowired
+	    private TodoRepository repo;
+	    
+	    // Fetching All the Tasks from the Database.
 
-    public Page<Todo> getPaginatedTasks(int page, int size) {
-        Pageable pageable = PageRequest.of(page, size, Sort.by("id").descending());
-        return repo.findAll(pageable);
-    }
-}
+	    public Page<Todo> getPaginatedTasks(int page, int size) {
+	        Pageable pageable = PageRequest.of(page, size, Sort.by("id").descending());
+	        return repo.findAll(pageable);
+	    }
+	}
 ####
 
