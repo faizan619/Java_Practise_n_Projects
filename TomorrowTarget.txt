@@ -4,7 +4,7 @@ Note : Always Try to Write the Todo you going to do Tomorrow.
 {# 7 August 2025 #}
 
 1) Practise Spring Boot with Response Entity,CrossOrigin,
-        optimised URL, and 1 to many or many to 1 relation          - 
+        optimised URL, and 1 to many or many to 1 relation          - Done
 2) Do one Hour Spring Security Github Learning                      - 
 3) Create a Vlog                                                    - Done
 4) Apply in Company or Ask for Referral & Follow up                 - Done
