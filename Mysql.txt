@@ -55,19 +55,53 @@ Inner Joins
 -- Q4: List all employees who have been assigned to projects.
 	SELECT Employees.emp_name, Projects.project_name from Employees
 	INNER JOIN Projects WHERE Employees.emp_id = Projects.emp_id
+
 -- Q5: Show each employee’s name and their manager’s name.
+	SELECT  e.emp_name AS employee_name, m.emp_name AS manager_name
+	FROM Employees e INNER JOIN Employees m ON e.manager_id = m.emp_id;
+
 -- Q6: List employees with their departments and assigned project names.
+	SELECT Employees.emp_name,Departments.dept_name,Projects.project_name FROM Employees
+	INNER JOIN Departments ON Employees.dept_id = Departments.dept_id
+	INNER JOIN Projects ON Projects.emp_id = Employees.emp_id
+
 -- Q7: Show departments with at least one employee assigned.
+	SELECT Departments.dept_name , Employees.dept_id, COUNT(Employees.dept_id) FROM Departments
+	INNER JOIN Employees ON Employees.dept_id = Departments.dept_id GROUP BY Employees.dept_id  HAVING COUNT(Employees.dept_id)>=1 ;
+
 -- Q8: List employees who belong to departments and also have projects.
+	SELECT Employees.emp_name,Departments.dept_name,Projects.project_name FROM Employees
+	INNER JOIN Departments ON Employees.dept_id = Departments.dept_id
+	INNER JOIN Projects ON Projects.emp_id = Employees.emp_id
+
 -- Q9: Find employees whose project and department both exist.
+	SELECT Employees.emp_name,Departments.dept_name,Projects.project_name FROM Employees
+	INNER JOIN Departments ON Employees.dept_id = Departments.dept_id
+	INNER JOIN Projects ON Projects.emp_id = Employees.emp_id
+
 -- Q10: Show each employee with both department name and project name.
 
 Left Join
 -- Q1: List all employees and their department names (including those with no dept).
+	SELECT Employees.emp_name, Departments.dept_name FROM Employees
+	LEFT JOIN Departments ON Employees.dept_id = Departments.dept_id
+
 -- Q2: Show all employees and their project names (including unassigned).
+	SELECT Employees.emp_name, Projects.project_name FROM Employees
+	LEFT JOIN Projects ON Projects.emp_id = Employees.emp_id;
+
 -- Q3: List all departments and their employees (even if no employees).
+	SELECT Departments.dept_name, Employees.emp_name FROM Departments
+	LEFT JOIN Employees ON Departments.dept_id = Employees.dept_id;
+
 -- Q4: Show all projects and employee names (even if no employee is assigned).
+	SELECT Projects.project_name, Employees.emp_name FROM Projects
+	LEFT JOIN Employees ON Projects.emp_id = Employees.emp_id;
+
 -- Q5: Get all employees and their manager names (even if no manager).
+	SELECT a.emp_name emp_name, b.emp_name as manager_name FROM Employees a
+	LEFT JOIN Employees b ON a.manager_id = b.emp_id;
+
 -- Q6: List departments and total number of employees (even if 0).
 -- Q7: Show all employees and project names (null if no project).
 -- Q8: Get all employees and assigned projects; show null if no match.
@@ -110,6 +144,55 @@ Interview on Joins
 9. What is a Cartesian product in JOIN?
 10. What are different types of JOINs in SQL and their use cases?
 
+SubQuery
+1. Find the names of employees who work in the same department as 'Bob'.
+2. List the department name that has the maximum number of employees.
+3. Find the employees who are not assigned to any project.
+4. Get names of employees who manage at least one other employee.
+5. List the project names where the employee belongs to the 'Marketing' department.
+6. Find the employee(s) who is assigned to the most number of projects.
+7. List names of employees who are in a department that has no assigned projects.
+8. Show departments where no employee is assigned.
+9. Find employees who work in departments where 'Alice' also works.
+10. List project names that are assigned to employees without a manager.
+11. Find the name of the employee who is assigned to 'Project A'.
+12. List employees who are in the same department as both 'Charlie' and 'David'.
+13. Show the names of departments where at least one employee has a project assigned.
+14. Get the name of the employee who has the lowest emp_id.
+15. Find employees who have the same department as someone working on 'Project C'.
+
+Advance SubQuery
+16. List employees who are the only ones in their department.
+17. Find departments that have at least one employee assigned.
+18. Show all projects that are not assigned to any existing employee.
+19. Find employees whose emp_id is greater than all emp_ids assigned to projects.
+20. List employees who share a department with any employee working on a project.
+
+Group By and having Clause
+1. Count the number of employees in each department.
+2. List departments having more than 1 employee.
+3. Show each project count assigned to employees.
+4. Find departments where the average emp_id is greater than 102.
+5. Get the total number of employees under each manager.
+6. List departments with maximum emp_id greater than 104.
+7. Count how many employees each department has, excluding NULLs.
+8. Find managers who manage more than one person.
+9. Show departments having total employee IDs sum greater than 200.
+10. Find how many employees exist per department and sort by that count descending.
+
+Aggrigate function
+11. What is the total number of employees?
+12. What is the average emp_id in the company?
+13. Find the minimum and maximum emp_id.
+14. How many projects are there in total?
+15. Get the total of all emp_id values from the Employees table.
+16. Find the number of employees who have a manager.
+17. What is the average number of projects per employee (only include assigned)?
+18. How many departments exist?
+19. Find the department with the maximum number of employees.
+20. Get the total number of distinct managers.
+21. How do you find duplicate values in a column using GROUP BY and HAVING?
+22. What’s the difference between COUNT(*) and COUNT(column_name)?
 
 
 Commands
