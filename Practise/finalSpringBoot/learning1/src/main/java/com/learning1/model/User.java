@@ -2,11 +2,23 @@ package com.learning1.model;
 
 import java.time.LocalDateTime;
 
-import org.hibernate.annotations.*;
-import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 import jakarta.persistence.CascadeType;
-import jakarta.persistence.Table;       // because table annotation is also present in org.hibernate.annotation
-import lombok.*;
+import jakarta.persistence.Column;       // because table annotation is also present in org.hibernate.annotation
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @Setter
 @Getter
@@ -24,8 +36,8 @@ public class User{
     private int id;
 
     @ManyToOne
-    @JoinColumn(name="dept_id")
-    private Department dept;
+    @JoinColumn(name="dept_id",nullable=false)
+    private Department department;
 
     @OneToOne(mappedBy="user", cascade=CascadeType.ALL)
     private BankDetails bank_details;
@@ -61,7 +73,7 @@ public class User{
         this.age = age;
         this.isActive = true;
         this.role = role;
-        this.dept = dept;
+        this.department = dept;
     }
 
     public User(Department dept,String username, String fullname,int age, String number) {
@@ -71,7 +83,7 @@ public class User{
         this.age = age;
         this.isActive = true;
         this.role = "USER";
-        this.dept = dept;
+        this.department = dept;
     }
 
     public User(Department dept,String username, String fullname) {
@@ -79,6 +91,6 @@ public class User{
         this.fullname = fullname;
         this.isActive = true;
         this.role = "USER";
-        this.dept = dept;
+        this.department = dept;
     }
 }
