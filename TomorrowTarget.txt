@@ -1,6 +1,14 @@
 Note : Always Try to Write the Todo you going to do Tomorrow.
 ./mvnw spring-boot:run
 
+{# 8 August 2025 #}
+
+1) Practise Spring Security                                         - 
+2) Practise MySql Queries                                           -
+3) Create a Vlog                                                    - Done
+4) Ask for referral or apply in company                             - Done
+5) Read and Understand code of Relationship in spring boot          -
+
 {# 7 August 2025 #}
 
 1) Practise Spring Boot with Response Entity,CrossOrigin,
@@ -8,7 +16,7 @@ Note : Always Try to Write the Todo you going to do Tomorrow.
 2) Do one Hour Spring Security Github Learning                      - 
 3) Create a Vlog                                                    - Done
 4) Apply in Company or Ask for Referral & Follow up                 - Done
-5) Practise MySQL Query Joins                                       -
+5) Practise MySQL Query Joins                                       - Done
 
 {# 6 August 2025 #}
 

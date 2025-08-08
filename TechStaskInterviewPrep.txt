@@ -117,6 +117,14 @@
 ####
 #### [ 5 ]
 
+	@GetMapping("/tasks")
+	    public Page<Todo> getPaginatedTasks(
+	            @RequestParam(defaultValue = "0") int page,
+	            @RequestParam(defaultValue = "5") int size
+	    ) {
+	        return service.getPaginatedTasks(page, size);
+	    }
+
 	@Service
 	public class TodoService {
 
