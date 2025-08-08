@@ -1,13 +1,24 @@
 Note : Always Try to Write the Todo you going to do Tomorrow.
 ./mvnw spring-boot:run
 
+{# 9 August 2025 #}
+
+1) Do Lambda Expression and Stream API in Java                      -
+2) Practise 5 Question of JavaGuides page                           -
+3) Do PlSQL summary! along with MySQL                               -
+4) Create a Vlog                                                    -
+5) Again Practise 1 to many and many to 1 and 1 to 1                -
+6) Learn session 2 and 3 or Spring security                         -
+7) Ask for referral or apply in company                             -
+8) if get time do PlSql Again.                                      -
+
 {# 8 August 2025 #}
 
 1) Practise Spring Security                                         - 
 2) Practise MySql Queries                                           -
 3) Create a Vlog                                                    - Done
 4) Ask for referral or apply in company                             - Done
-5) Read and Understand code of Relationship in spring boot          -
+5) Read and Understand code of Relationship in spring boot          - Done
 
 {# 7 August 2025 #}
 
