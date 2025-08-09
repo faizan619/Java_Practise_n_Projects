@@ -3,14 +3,15 @@ Note : Always Try to Write the Todo you going to do Tomorrow.
 
 {# 9 August 2025 #}
 
-1) Do Lambda Expression and Stream API in Java                      -
-2) Practise 5 Question of JavaGuides page                           -
-3) Do PlSQL summary! along with MySQL                               -
-4) Create a Vlog                                                    -
-5) Again Practise 1 to many and many to 1 and 1 to 1                -
-6) Learn session 2 and 3 or Spring security                         -
-7) Ask for referral or apply in company                             -
-8) if get time do PlSql Again.                                      -
+1) Do Lambda Expression and Stream API in Java                      - Done
+2) Practise 5 Question of Java in JavaGuid                          - Done
+3) Do PlSQL summary! along with MySQL                               - Done
+4) Create a Vlog                                                    - Done
+5) Again Practise 1 to many and many to 1 and 1 to 1                - Done
+6) Learn session 2 and 3 or Spring security                         - Done
+7) Ask for referral or apply in company                             - Done
+8) if get time do PlSql Again.                                      - 
+9) Update the Resume and sent to the MindCraft Employee             - 
 
 {# 8 August 2025 #}
 

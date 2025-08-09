@@ -1,0 +1,79 @@
+📚 Example Project: Library Management System
+We’ll have three tables:
+
+1️⃣ library
+One Library → Many Books (One-to-Many)
+
+Columns:
+
+id (PK, INT, AUTO_INCREMENT)
+
+name (VARCHAR)
+
+location (VARCHAR)
+
+2️⃣ book
+Many Books → One Library (Many-to-One)
+
+One Book → One BookDetail (One-to-One)
+
+Columns:
+
+id (PK, INT, AUTO_INCREMENT)
+
+title (VARCHAR)
+
+library_id (FK → library.id)
+
+book_detail_id (FK → book_detail.id)
+
+3️⃣ book_detail
+One BookDetail → One Book (One-to-One)
+
+Columns:
+
+id (PK, INT, AUTO_INCREMENT)
+
+isbn (VARCHAR, UNIQUE)
+
+published_year (INT)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Memory management:
+Java uses two main areas of memory to manage data: the heap and the stack.
+
+Heap Memory:
+	This is where Java stores objects. When you create a new object using the new keyword, it is allocated in the heap.
+	Example:	String str = new String("Hello, World!");
+
+Stack Memory:
+	This is where Java stores method calls and local variables. Each time a method is called, a new block is created in the stack to hold the method’s variables and parameters. When the method finishes, this block is removed from the stack.
+
+Garbage Collection uses : 
+This helps to prevent memory leaks and allows the program to use memory efficiently.
