@@ -66,31 +66,43 @@ public class User{
     @UpdateTimestamp
     private LocalDateTime updatedAt;
 
-    public User(Department dept,String username, String fullname,String number, int age, String role) {
+    // public User(Department dept,String username, String fullname,String number, int age, String role) {
+    public User(int dept,String username, String fullname,String number, int age, String role) {
         this.username = username;
         this.fullname = fullname;
         this.number = number;
         this.age = age;
         this.isActive = true;
         this.role = role;
-        this.department = dept;
+
+        Department dept1 = new Department();
+        dept1.setId(dept);
+        
+        this.department = dept1;
     }
 
-    public User(Department dept,String username, String fullname,int age, String number) {
+    // public User(Department dept,String username, String fullname,int age, String number) {
+    public User(int dept,String username, String fullname,int age, String number) {
         this.username = username;
         this.fullname = fullname;
         this.number = number;
         this.age = age;
         this.isActive = true;
         this.role = "USER";
-        this.department = dept;
+        Department dept1 = new Department();
+        dept1.setId(dept);
+        
+        this.department = dept1;
     }
 
-    public User(Department dept,String username, String fullname) {
+    public User(int dept,String username, String fullname) {
         this.username = username;
         this.fullname = fullname;
         this.isActive = true;
         this.role = "USER";
-        this.department = dept;
+        Department dept1 = new Department();
+        dept1.setId(dept);
+        
+        this.department = dept1;
     }
 }
