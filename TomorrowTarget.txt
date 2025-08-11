@@ -1,5 +1,20 @@
 Note : Always Try to Write the Todo you going to do Tomorrow.
+
 ./mvnw spring-boot:run
+
+1) Morning : Java DSA + MySQL Query + Email Writing.    -M
+2) During Office : Spring Boot Security + Job Search    -O
+3) Night : Interview Questions Learning of All Tech.    -N
+
+{# 12 August 2025 #}
+
+1) O - Create a Spring Boot + Spring Security Project With every Import.
+2) O - Delete Unused or not Referenced Spring Boot Project.
+3) O - Do 3 Video of Micro Service.
+3) N - Do Interview Question of Java.
+4) M - Do Three Java Guide Question and Two Pointer Alogrithm Pattern.
+
+
 
 {# 9 August 2025 #}
 
@@ -10,8 +25,8 @@ Note : Always Try to Write the Todo you going to do Tomorrow.
 5) Again Practise 1 to many and many to 1 and 1 to 1                - Done
 6) Learn session 2 and 3 or Spring security                         - Done
 7) Ask for referral or apply in company                             - Done
-8) if get time do PlSql Again.                                      - 
-9) Update the Resume and sent to the MindCraft Employee             - 
+8) if get time do PlSql Again.                                      - Done
+9) Update the Resume and sent to the MindCraft Employee             - Done
 
 {# 8 August 2025 #}
 
