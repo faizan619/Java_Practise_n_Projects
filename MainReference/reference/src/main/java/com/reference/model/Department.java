@@ -49,4 +49,5 @@ public class Department {
         this.deptName = deptName;
         this.deptCode = deptCode;
     }
+
 }
