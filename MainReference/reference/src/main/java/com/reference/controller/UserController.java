@@ -38,12 +38,12 @@ public class UserController {
         }
     }
 
-    @GetMapping("/departments")
-    public ResponseEntity<List<User>> getUsersWithDepartments() {
-        List<User> users = userService.findUserWithDepartments();
-        // return ResponseEntity.ok(users);
-        return new ResponseEntity<>(users, HttpStatus.OK);
-    }
+    // @GetMapping("/departments")
+    // public ResponseEntity<List<User>> getUsersWithDepartments() {
+    //     List<User> users = userService.findUserWithDepartments();
+    //     // return ResponseEntity.ok(users);
+    //     return new ResponseEntity<>(users, HttpStatus.OK);
+    // }
 
     @PostMapping("")
     public ResponseEntity<String> addUser(@RequestBody User user) {

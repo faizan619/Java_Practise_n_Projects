@@ -34,11 +34,11 @@ public class DepartmentController {
         return new ResponseEntity<>(deptId,HttpStatus.OK);
     }
 
-    @GetMapping("/users")
-    public ResponseEntity<List<Department>> getDepartmentsWithUsers(){
-        List<Department> departments = service.getDepartmentsWithUsers();
-        return new ResponseEntity<>(departments, HttpStatus.OK);
-    }
+    // @GetMapping("/users")
+    // public ResponseEntity<List<Department>> getDepartmentsWithUsers(){
+    //     List<Department> departments = service.getDepartmentsWithUsers();
+    //     return new ResponseEntity<>(departments, HttpStatus.OK);
+    // }
 
     @PostMapping("")
     public ResponseEntity<String> addDepartment(@RequestBody Department department){
