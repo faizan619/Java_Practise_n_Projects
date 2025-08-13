@@ -77,3 +77,97 @@ Stack Memory:
 
 Garbage Collection uses : 
 This helps to prevent memory leaks and allows the program to use memory efficiently.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Done	-	Java Program to Reverse a String
+		-	Java Program to Reverse a Number
+Done	-	Java Program to Check Palindrome String
+Done	-	Java Program to Check Armstrong Number
+		-	Java Program to Find Prime Numbers
+		-	Java Program for Prime Numbers Within a Range
+Done	-	Java Program to Count the Number of Vowels in a String
+		-	Java Program to Find the First Non-repeated Character in a String
+		-	Java Program to Find Duplicate Characters in a String
+		-	Java Program to Find Duplicate Words in a String
+		-	Java Program to Find All the Permutations of a String
+		-	Java Program to Count Occurrences of Words in a String
+Done	-	Java Program to Count Vowels and Consonants in a String
+		-	Java Program to Count the Number of Duplicate Words in a String
+		-	Java Program to Count the Number of Occurrences of a Substring in a String
+		-	Java Program to Count the Occurrences of Each Character in a String
+		-	Java Program to Merge Two String Arrays
+Done	-	Java Program to Remove Duplicate Words from a String
+		-	Java Program to Reverse Each Word of a String
+Done	-	Java Program to Swap Two Strings
+		-	Java Program to Find Maximum Occurring Character in a String
+		-	Java Program to Count the Occurrences of Each Character Using HashMap
+Done	-	Java Program to Convert a String to Uppercase
+Done	-	Java Program to Convert a String to Lowercase
+Done	-	Java Program to Find the Longest Word in a String
+Done	-	Java Program to Remove All Whitespace from a String
+		-	Java Program to Check if a Number is Prime
+		-	Java Program to Find the Fibonacci Series
+		-	Java Program to Find the GCD of Two Numbers
+		-	Java Program to Find the LCM of Two Numbers
+		-	Java Program to Find the LCM of Two Numbers
+		-	Java Program to Calculate the Power of a Number
+Done	-	Java Program to Check if a Number is Even or Odd
+		-	Java Program to Check Leap Year
+Done	-	Java Program to Find the Sum of Digits of a Number
+		-	Java Program to Find the Sum of Natural Numbers
+		-	Java Program to Count the Number of Digits in a Number
+		-	Java Program to Print Prime Numbers Between 1 and 100
+		-	Java Program to Swap Two Numbers Without Using a Temporary Variable
+		-	Java Program to Find the Largest of Three Numbers
+		-	Java Program to Check if a Number is a Perfect Square
+		-	Java Program to Convert Decimal to Binary
+		-	Java Program to Convert Binary to Decimal
+		-	Java Program to Find the Second Largest Number in an Array
+		-	Java Program to Sort an Array Using Bubble Sort
+		-	Java Program to Implement Binary Search in an Array
+		-	Java Program to Implement Merge Sort
+		-	Java Program to Implement Quick Sort
+		-	Java Program to Find the Maximum and Minimum in an Array
+		-	Java Program to Find the Sum of Elements in an Array
+		-	Java Program to Remove Duplicates from an Array
+		-	Java Program to Find the Frequency of Elements in an Array
+		-	Java Program to Merge Two Arrays
+		-	Java Program to Reverse an Array Without Using Another Array
+		-	Java Program to Rotate an Array
+		-	Java Program to Separate Even and Odd Numbers in an Array
+		-	Java Program to Find the Median of an Array
+		-	Java Program to Find the Intersection of Two Arrays
+		-	Java Program to Find the Union of Two Arrays
+		-	Java Program to Sort an Array of Strings
+		-	Java Program to Reverse a Linked List
+		-	Java Program to Find the Middle Element of a Linked List
+		-	Java Program to Merge Two Sorted Linked Lists
+		-	Java Program to Remove Duplicates from a Linked List
+		-	Java Program to Find the Length of a Linked List
+		-	Java Program to Delete a Node from a Linked List
+		-	Java Program to Insert a Node at the Beginning of a Linked List
+		-	Java Program to Insert a Node at the End of a Linked List
+		-	Java Program to Check if a Linked List is a Palindrome
+		-	Java Program to Implement a Stack Using Array
+		-	Java Program to Implement a Stack Using Linked List
+		-	Java Program to Implement a Queue Using Array
+		-	Java Program to Implement a Queue Using Array
+		-	Java Program to Implement a Queue Using Linked List
+		-	Java Program to Implement Circular Queue
+		-	Java Program to Implement a Priority Queue
+		-	Java Program to Implement Circular Queue
+		-	Java Program to Evaluate Postfix Expression Using Stack

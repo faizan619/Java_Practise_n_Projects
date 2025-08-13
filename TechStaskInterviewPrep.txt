@@ -140,3 +140,23 @@
 	}
 ####
 
+public Customer updateDetails(Integer custId, Customer updatedDetails){
+        // return repo.save(details);
+        Customer details = repo.findById(custId).orElseThrow(() -> new RuntimeException("Task with ID " + custId + " not found."));
+
+        details.setContact_person_name(updatedDetails.getContact_person_name());
+        details.setContact(updatedDetails.getContact());
+        details.setEmail(updatedDetails.getEmail());
+        details.setGstin(updatedDetails.getGstin());
+        details.setAddress(updatedDetails.getAddress());
+        details.setCompany_name(updatedDetails.getCompany_name());
+
+        return repo.save(details);
+    }
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+    List<Product> findByDateCreatedBetween(LocalDateTime startDate, LocalDateTime endDate);
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------
