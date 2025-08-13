@@ -30,7 +30,7 @@ public class UserService {
         repo.deleteById(id);
     }
 
-    public List<User> findUserWithDepartments(){
-        return repo.findUsersWithDepartments();
-    }
+    // public List<User> findUserWithDepartments(){
+    //     return repo.findUsersWithDepartments();
+    // }
 }
