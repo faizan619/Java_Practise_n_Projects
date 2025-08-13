@@ -19,6 +19,6 @@ public interface UserRepo extends JpaRepository<User, Integer> {
     @Query("SELECT u FROM User u WHERE u.isActive = :status")
     List<User> findActiveUsers(Boolean status);    
 
-    @Query("SELECT u, d FROM User u INNER JOIN Department d ON u.deptId = d.id")
-    List<User> findUsersWithDepartments();
+    // @Query("SELECT u, d FROM User u INNER JOIN Department d ON u.deptId = d.id")
+    // List<User> findUsersWithDepartments();
 }

@@ -12,7 +12,7 @@ public interface DepartmentRepo extends JpaRepository<Department, Integer> {
     
     Department findByDeptName(String deptName);
     
-    @Query("SELECT d, u FROM Department d INNER JOIN User u ON d.id = u.deptId")
-    List<Department> findDepartmentsWithUsers();
+    // @Query("SELECT d, u FROM Department d INNER JOIN User u ON d.id = u.deptId")
+    // List<Department> findDepartmentsWithUsers();
     
 }

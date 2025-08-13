@@ -20,7 +20,7 @@ public interface UserDetailsRepo extends JpaRepository<UserDetails, Integer> {
     """)
     List<UserDetails> findByParams(Boolean married, String country, String state, String address);
 
-    @Query("SELECT u, d FROM UserDetails u INNER JOIN User d ON u.userId = d.id")
-    List<UserDetails> findUserDetailsWithUsers();
+    // @Query("SELECT u, d FROM UserDetails u INNER JOIN User d ON u.userId = d.id")
+    // List<UserDetails> findUserDetailsWithUsers();
     
 }
