@@ -7,12 +7,12 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
+// import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+// import jakarta.persistence.JoinColumn;
+// import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -31,9 +31,9 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "dept_id", nullable = false)
-    private Department deptId;
+    // @ManyToOne(fetch = FetchType.LAZY)
+    // @JoinColumn(name = "dept_id", nullable = false)
+    // private Department deptId;
 
     @Column(nullable = false, unique = true)
     private String username;
@@ -59,10 +59,11 @@ public class User {
     @UpdateTimestamp
     private LocalDateTime updatedAt;
 
-    public User(int deptId, String username,String email,String number, String password, String role) {
-        Department dept = new Department();
-        dept.setId(deptId);
-        this.deptId = dept;
+    // public User(int deptId, String username,String email,String number, String password, String role) {
+    public User(String username,String email,String number, String password, String role) {
+        // Department dept = new Department();
+        // dept.setId(deptId);
+        // this.deptId = dept;
 
         this.username = username;
         this.password = password;
@@ -72,10 +73,11 @@ public class User {
         this.isActive = true; // Default value for isActive
 
     }
-    public User(int deptId, String username, String email, String number, String password) {
-        Department dept = new Department();
-        dept.setId(deptId); // deptId comes from API request
-        this.deptId = dept;
+    // public User(int deptId, String username, String email, String number, String password) {
+    public User(String username, String email, String number, String password) {
+        // Department dept = new Department();
+        // dept.setId(deptId); // deptId comes from API request
+        // this.deptId = dept;
 
         this.username = username;
         this.email = email;
@@ -85,10 +87,11 @@ public class User {
         this.isActive = true;
     }
 
-    public User(int deptId, String username,String email, String password) {
-        Department dept = new Department();
-        dept.setId(deptId); // deptId comes from API request
-        this.deptId = dept;
+    // public User(int deptId, String username,String email, String password) {
+    public User(String username,String email, String password) {
+        // Department dept = new Department();
+        // dept.setId(deptId); // deptId comes from API request
+        // this.deptId = dept;
         
         this.username = username;
         this.email = email;
