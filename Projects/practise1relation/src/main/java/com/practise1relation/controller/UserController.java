@@ -22,12 +22,19 @@ public class UserController {
 
     @Autowired
     private UserService service;
-    
+
     @GetMapping
-    public ResponseEntity<List<Users>> getAllUsers() {
-        List<Users> users = service.getAllUsers();
+    public ResponseEntity<List<UserDTO>> getAllUsers() {
+        List<UserDTO> users = service.getAllUsers();
         return ResponseEntity.ok(users);
     }
+    
+    @GetMapping("/all")
+    public ResponseEntity<List<Users>> getAllUsersWithDepartment() {
+        List<Users> users = service.getAllUsersWithDepartment();
+        return ResponseEntity.ok(users);
+    }
+
 
     @GetMapping("/{id}")
     public ResponseEntity<Users> getUserById(@PathVariable Long id) {
@@ -35,7 +42,7 @@ public class UserController {
         if (user == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        return ResponseEntity.ok(user);
+        return ResponseEntity.ok(user); 
     }
 
     @PostMapping
