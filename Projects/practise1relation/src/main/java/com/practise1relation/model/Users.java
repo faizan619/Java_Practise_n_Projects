@@ -9,6 +9,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -28,9 +30,9 @@ public class Users {
     private Long id;
 
     // Idher Many To One Relation with Department
-    // @ManyToOne
-    // @JoinColumn(name = "department_id")
-    // private Department department;
+    @ManyToOne
+    @JoinColumn(name = "department_id")
+    private Department department;
 
     @Column(nullable = false, unique = true)
     private String username;
@@ -50,19 +52,40 @@ public class Users {
     @CreationTimestamp
     private LocalDateTime createdAt;
 
-    public Users(String username, String password, String email, String fullName, String role) {
-        this.username = username;
-        this.password = password;
-        this.email = email;
-        this.fullName = fullName;
-        this.role = role;
-    }
+    // public Users(int dept,String username, String password, String email, String fullName, String role) {
+    //     this.username = username;
+    //     this.password = password;
+    //     this.email = email;
+    //     this.fullName = fullName;
+    //     this.role = role;
 
-    public Users(String username, String password, String email, String fullName) {
-        this.username = username;
-        this.password = password;
-        this.email = email;
-        this.fullName = fullName;
-        this.role = "USER";
-    }
+    //     this.department = new Department();
+    //     this.department.setId((long) dept); 
+    // }
+
+    // public Users(int dept,String username, String password, String email, String fullName) {
+    //     this.username = username;
+    //     this.password = password;
+    //     this.email = email;
+    //     this.fullName = fullName;
+    //     this.role = "USER";
+
+    //     this.department = new Department();
+    //     this.department.setId((long) dept); 
+    // }
+    // public Users(String username, String password, String email, String fullName, String role) {
+    //     this.username = username;
+    //     this.password = password;
+    //     this.email = email;
+    //     this.fullName = fullName;
+    //     this.role = role;
+    // }
+
+    // public Users(String username, String password, String email, String fullName) {
+    //     this.username = username;
+    //     this.password = password;
+    //     this.email = email;
+    //     this.fullName = fullName;
+    //     this.role = "USER";
+    // }
 }

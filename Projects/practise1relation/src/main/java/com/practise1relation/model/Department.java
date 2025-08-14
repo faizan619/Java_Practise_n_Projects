@@ -1,6 +1,7 @@
 package com.practise1relation.model;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -9,6 +10,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,9 +29,8 @@ public class Department {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // @OneToMany(mappedBy = "department")
-    // private List<User> users;
-    
+    @OneToMany(mappedBy = "department")
+    private List<Users> users;
 
     @Column(nullable=false,unique=true)
     private String department_code;
