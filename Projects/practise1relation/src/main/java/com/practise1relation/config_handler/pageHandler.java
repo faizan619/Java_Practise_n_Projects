@@ -1,0 +1,36 @@
+package com.practise1relation.config_handler;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.boot.web.servlet.error.ErrorController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class pageHandler implements ErrorController {
+    
+    @RequestMapping("/page-not-found")
+    // public ResponseEntity<String> handleError() {
+    //     return ResponseEntity
+    //             .status(HttpStatus.NOT_FOUND)
+    //             .body("Page not found!");
+    // }
+
+    public ResponseEntity<Map<String, String>> handleError() {
+        Map<String, String> response = new HashMap<>();
+        response.put("error", "Page not found!");
+        response.put("path", "/error");
+        return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
+    }
+}
+
+
+// public ResponseEntity<Map<String, String>> handleNotFound(NoHandlerFoundException ex) {
+//         Map<String, String> response = new HashMap<>();
+//         response.put("error", "Page not found!");
+//         response.put("path", ex.getRequestURL());
+//         return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
+//     }
