@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import com.monolithic.model.Question;
 import com.monolithic.model.QuestionWrapper;
 import com.monolithic.model.Quiz;
+import com.monolithic.model.Response;
 import com.monolithic.repository.QuizRepository;
 
 @Service
@@ -27,7 +28,8 @@ public class QuizService {
 
         List<Question> questions = repo.findRandomQuestionByCategory(category,num); // Logic to fetch questions based on category and num
         // Logic to start the quiz
-        Quiz quiz = new Quiz();
+        // Quiz quiz = new Quiz();
+        quiz = new Quiz();
         quiz.setTitle(title);
         quiz.setQuestions(questions); 
         repo.save(quiz); 
@@ -54,6 +56,24 @@ public class QuizService {
         }
 
         return new ResponseEntity<>(questionForUsers, HttpStatus.OK);
+    }
+
+    public ResponseEntity<Integer> calculateResult(Long quizId, List<Response> responses) {
+
+        // Quiz quiz = repo.findById(quizId).orElse(null);
+        quiz = repo.findById(quizId).get();
+
+        List<Question> questions = quiz.getQuestions();
+        Integer right = 1;
+        int i = 0;
+        for (Response response : responses) {
+            if( response.getResponse().equals(questions.get(i).getRight_answer()) ) {
+                right++;
+            }
+            i++;
+        }
+        
+        return new ResponseEntity<>(right, HttpStatus.OK);
     }
 
 }
