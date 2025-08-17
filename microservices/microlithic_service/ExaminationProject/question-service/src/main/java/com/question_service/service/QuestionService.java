@@ -62,8 +62,6 @@ public class QuestionService {
     }
 
     public ResponseEntity<Integer> getScore(List<Response> responses) {
-        System.out.println("Responses: " + responses.get(0).getResponse());
-        System.out.println("Responses: " + responses.get(1).getResponse());
         Integer right = 0;
         for(Response response: responses) {
             Question question = repo.findById(response.getId()).get();
