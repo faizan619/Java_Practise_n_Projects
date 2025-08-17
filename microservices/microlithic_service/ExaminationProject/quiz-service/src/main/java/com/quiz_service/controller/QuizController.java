@@ -39,7 +39,7 @@ public class QuizController {
     public ResponseEntity<String> startQuiz(@RequestBody QuizDTO quizDTO) {
         // Logic to start the quiz
         ResponseEntity<String> result = service.startQuiz(quizDTO.getCategoryName(), 
-            quizDTO.getNumberOfQuestions().toString(), quizDTO.getTitle());
+            quizDTO.getNumberOfQuestions(), quizDTO.getTitle());
         if (result == null) {
             return new ResponseEntity<>("Failed to start quiz", HttpStatus.INTERNAL_SERVER_ERROR);
         }

@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import com.quiz_service.feign.QuizInterface;
 import com.quiz_service.model.QuestionWrapper;
 import com.quiz_service.model.Quiz;
 import com.quiz_service.model.Response;
@@ -19,19 +20,20 @@ public class QuizService {
     @Autowired
     private QuizRepository repo;
 
+    @Autowired
+    private QuizInterface quizInterface;
+
     // @Autowired
     // private Quiz quiz;
 
-    public ResponseEntity<String> startQuiz(String category, String num, String title) {
+    public ResponseEntity<String> startQuiz(String category, Integer num, String title) {
 
-        // List<Question> questions = // call the generate URL
-        // // Logic to start the quiz
-        // // Quiz quiz = new Quiz();
-        // quiz = new Quiz();
-        // quiz.setTitle(title);
-        // quiz.setQuestions(questions); 
-        // repo.save(quiz); 
+        List<Integer> questions = quizInterface.getQuestionsForQuiz(category, num).getBody();
 
+        Quiz quiz = new Quiz();
+        quiz.setTitle(title);
+        quiz.setQuestionsIds(questions);
+        repo.save(quiz);
         return new ResponseEntity<>("Quiz Created Successfully!",HttpStatus.CREATED);
 
     } 
