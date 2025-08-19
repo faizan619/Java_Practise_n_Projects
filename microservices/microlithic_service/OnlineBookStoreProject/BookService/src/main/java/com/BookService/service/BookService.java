@@ -1,0 +1,110 @@
+package com.BookService.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+
+import com.BookService.dto.BookDTO;
+import com.BookService.model.Books;
+// import com.BookService.model.Books;
+import com.BookService.repository.BookRepository;
+
+@Service
+
+public class BookService {
+
+    @Autowired
+    private BookRepository repo;
+
+    private BookDTO convertToDTO(Books book) {
+        BookDTO dto = new BookDTO();
+        dto.setId(book.getId());
+        dto.setAuthor(book.getAuthor());
+        dto.setTitle(book.getTitle());
+        dto.setPrice(book.getPrice());
+        dto.setStock(book.getStock());
+        return dto;
+    }
+
+    private Books convertToEntity(BookDTO dto) {
+        Books book = new Books();
+        book.setId(dto.getId());
+        book.setTitle(dto.getTitle());
+        book.setAuthor(dto.getAuthor());
+        book.setPrice(dto.getPrice());
+        book.setStock(dto.getStock());
+        return book;
+    }
+
+    public ResponseEntity<List<BookDTO>> getAllBooks() {
+        List<BookDTO> books = repo.findAll().stream().map(this::convertToDTO).toList();
+        return new ResponseEntity<>(books, HttpStatus.OK);
+    }
+
+    public ResponseEntity<BookDTO> getBooksById(int id) {
+        BookDTO book = repo.findById(id).map(this::convertToDTO).orElse(null);
+        if (book != null) {
+            return new ResponseEntity<>(book, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+
+        // return repo.findById(id).map(book -> new ResponseEntity<>(convertToDTO(book),HttpStatus.OK)).orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND))
+    }
+
+    public ResponseEntity<BookDTO> addNewBook(BookDTO book) {
+        Books saveBook = repo.save(convertToEntity(book));
+        return new ResponseEntity<>(convertToDTO(saveBook), HttpStatus.OK);
+    }
+
+    // public ResponseEntity<BookDTO> updateBookDetail(BookDTO dto, int id) {
+    //     BookDTO book = repo.findById(id).map(this::convertToDTO).orElse(null);
+    //     if (book != null) {
+    //         book.setTitle(dto.getTitle());
+    //         book.setAuthor(dto.getAuthor());
+    //         book.setPrice(dto.getPrice());
+    //         book.setStock(dto.getStock());
+    //         Books updated = repo.save(convertToEntity(book));
+    //         return new ResponseEntity<>(convertToDTO(updated), HttpStatus.OK);
+    //     }
+    //     return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    // }
+    public ResponseEntity<BookDTO> updateBookDetail(BookDTO dto, int id) {
+        return repo.findById(id)
+                .map(book -> {
+                    book.setTitle(dto.getTitle());
+                    book.setAuthor(dto.getAuthor());
+                    book.setPrice(dto.getPrice());
+                    book.setStock(dto.getStock());
+                    Books updated = repo.save(book);
+                    return new ResponseEntity<>(convertToDTO(updated), HttpStatus.OK);
+                })
+                .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    }
+
+    // public ResponseEntity<String> deleteBookById(int id) {
+    //     BookDTO book = repo.findById(id).map(this::convertToDTO).orElse(null);
+    //     if (book != null) {
+    //         String author = book.getAuthor();
+    //         String title = book.getTitle();
+    //         repo.delete(convertToEntity(book));
+    //         return new ResponseEntity<>("Book " + title + " By " + author + " is Deleted successfully!", HttpStatus.NO_CONTENT);
+    //     }
+    //     return new ResponseEntity<>("Book not found!", HttpStatus.NOT_FOUND);
+    // }
+    public ResponseEntity<String> deleteBookById(int id) {
+        return repo.findById(id)
+                .map(book -> {
+                    repo.delete(book);
+                    return new ResponseEntity<>(
+                            "Book " + book.getTitle() + " by " + book.getAuthor() + " deleted successfully!",
+                            HttpStatus.OK
+                    );
+                })
+                .orElse(new ResponseEntity<>("Book not found!", HttpStatus.NOT_FOUND));
+    }
+
+}
