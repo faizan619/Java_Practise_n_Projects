@@ -1,0 +1,62 @@
+package com.OrderService.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+
+import com.OrderService.dto.OrderDTO;
+import com.OrderService.model.Order;
+import com.OrderService.repository.OrderRepository;
+
+@Service
+public class OrderService {
+    
+    @Autowired
+    private OrderRepository repo;
+
+    private OrderDTO convertToDTO(Order order) {
+        OrderDTO dto = new OrderDTO();
+        dto.setId(order.getId());
+        dto.setBookId(order.getBookId());
+        dto.setQuantity(order.getQuantity());
+        dto.setTotal_price(order.getTotal_price());
+        return dto;
+    }
+
+    private Order convertToEntity(OrderDTO dto) {
+        Order order = new Order();
+        order.setId(dto.getId());
+        order.setBookId(dto.getBookId());
+        order.setQuantity(dto.getQuantity());
+        order.setTotal_price(dto.getTotal_price());
+        return order;   
+    }
+
+    public List<OrderDTO> getAllOrder() {
+        List<OrderDTO> order =  repo.findAll().stream().map(this::convertToDTO).toList();
+        return order;
+    }
+
+    public ResponseEntity<OrderDTO> getOrderDetail(int id) {
+        return repo.findById(id).map(order -> new ResponseEntity<>(convertToDTO(order),HttpStatus.OK)).orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    }
+
+    public OrderDTO addNewOrder(OrderDTO order){
+        // int bookId = order.getBookId();
+        // int quantity = order.getQuantity();
+
+        // idher teko book service sai connect karke book ka price fetch karna hai
+        // fetch karne k bad usse quantity sai multiple karke usse total price wale column meh dalna hai.
+
+        Order saveOrder = repo.save(convertToEntity(order));
+        return convertToDTO(saveOrder);
+    }
+
+    public String deleteOrderDetail(int id) {
+        repo.deleteById(id);
+        return "Data Deleted Successfully!";
+    }
+}
