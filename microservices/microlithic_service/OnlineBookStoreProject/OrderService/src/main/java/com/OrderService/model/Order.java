@@ -35,7 +35,7 @@ public class Order {
     private int quantity;
     
     @Column(nullable = false, unique = false)
-    private double totalPrice;
+    private double total_price;
 
     @CreationTimestamp
     private LocalDateTime createdAt;
