@@ -41,6 +41,11 @@ public class BookController {
         return service.addNewBook(book);
     }
 
+    @PostMapping("/bulk")
+    public ResponseEntity<List<BookDTO>> addBookInBulk(@Valid @RequestBody List<BookDTO> book) {
+        return service.addBookInBulk(book);
+    }
+
     @PutMapping("/{id}")
     public ResponseEntity<BookDTO> updateBookDetail(@Valid @RequestBody BookDTO book, @PathVariable int id){
         return service.updateBookDetail(book,id);

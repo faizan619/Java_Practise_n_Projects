@@ -59,6 +59,13 @@ public class BookService {
         return new ResponseEntity<>(convertToDTO(saveBook), HttpStatus.OK);
     }
 
+    public ResponseEntity<List<BookDTO>> addBookInBulk(List<BookDTO> books) {
+        List<Books> listOfBook = books.stream().map(this::convertToEntity).toList();
+        List<Books> saveAllBook = repo.saveAll(listOfBook);
+        List<BookDTO> response = saveAllBook.stream().map(this::convertToDTO).toList();
+        return new ResponseEntity<>(response,HttpStatus.OK);
+    }
+
     public ResponseEntity<BookDTO> updateBookDetail(BookDTO dto, int id) {
         return repo.findById(id)
                 .map(book -> {
