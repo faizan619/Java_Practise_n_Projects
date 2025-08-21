@@ -12,8 +12,6 @@ import com.OrderService.feign.BookFeign;
 import com.OrderService.model.Order;
 import com.OrderService.repository.OrderRepository;
 
-import feign.FeignException;
-
 @Service
 public class OrderService {
 
@@ -57,23 +55,16 @@ public class OrderService {
 
         // Step 1: fetch book price
         Double bookPrice = bookinterface.getBookPrice(bookId);
-        System.out.println("==================================== Book price : " + bookPrice + " =============================");
+        System.out.println("==================================== Book price : "+bookPrice+" =============================");
         if (bookPrice == null) {
             throw new RuntimeException("Book not found with id: " + bookId);
         }
 
         // Step 2: reduce stock (call BookService)
-        // String stockUpdateResponse = bookinterface.updateBookStock(bookId, quantity);
-        try {
-            // Try reducing stock
-            bookinterface.updateBookStock(bookId, quantity);
-        } catch (FeignException.BadRequest ex) {
-            // Handle 400 response from BookService
-            throw new RuntimeException("Order failed: Not enough stock for book id " + bookId);
+        String stockUpdateResponse = bookinterface.updateBookStock(bookId, quantity);
+        if (stockUpdateResponse.contains("Not enough stock")) {
+            throw new RuntimeException("Not enough stock for book id " + bookId);
         }
-        // if (stockUpdateResponse.contains("Not enough stock")) {
-        //     throw new RuntimeException("Not enough stock for book id " + bookId);
-        // }
 
         // Step 3: calculate total price
         double totalPrice = bookPrice * quantity;

@@ -46,17 +46,12 @@ public class BookController {
 
     // this is used with the order service microservice for reducing stock after order
     @PutMapping("/{id}/stock")
-    public ResponseEntity<?> updateStock(@PathVariable int id, @RequestParam int quantity) {
+    public ResponseEntity<String> updateStock(@PathVariable int id, @RequestParam int quantity) {
         boolean updated = service.reduceStock(id, quantity);
         if (updated) {
-            return ResponseEntity.ok().body("Stock updated successfully");
+            return new ResponseEntity<>("Stock updated successfully", HttpStatus.OK);
         } else {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-                    .body(Map.of(
-                            "message", "Not enough stock available",
-                            "bookId", id,
-                            "requestedQuantity", quantity
-                    ));
+            return new ResponseEntity<>("Not enough stock", HttpStatus.BAD_REQUEST);
         }
     }
 
