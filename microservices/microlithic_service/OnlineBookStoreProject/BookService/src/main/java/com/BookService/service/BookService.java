@@ -54,6 +54,25 @@ public class BookService {
         // return repo.findById(id).map(book -> new ResponseEntity<>(convertToDTO(book),HttpStatus.OK)).orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND))
     }
 
+    public ResponseEntity<Double> getBookPriceById(int id) {
+        Books book = repo.findById(id)
+                .orElseThrow(() -> new RuntimeException("Book not found with id " + id));
+        return new ResponseEntity<>(book.getPrice(), HttpStatus.OK);
+    }
+
+    public boolean reduceStock(int id, int quantity) {
+        Books book = repo.findById(id)
+                .orElseThrow(() -> new RuntimeException("Book not found with id " + id));
+
+        if (book.getStock() < quantity) {
+            return false; // not enough stock
+        }
+
+        book.setStock(book.getStock() - quantity);
+        repo.save(book);
+        return true;
+    }
+
     public ResponseEntity<BookDTO> addNewBook(BookDTO book) {
         Books saveBook = repo.save(convertToEntity(book));
         return new ResponseEntity<>(convertToDTO(saveBook), HttpStatus.OK);
@@ -63,7 +82,7 @@ public class BookService {
         List<Books> listOfBook = books.stream().map(this::convertToEntity).toList();
         List<Books> saveAllBook = repo.saveAll(listOfBook);
         List<BookDTO> response = saveAllBook.stream().map(this::convertToDTO).toList();
-        return new ResponseEntity<>(response,HttpStatus.OK);
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
     public ResponseEntity<BookDTO> updateBookDetail(BookDTO dto, int id) {
@@ -81,14 +100,14 @@ public class BookService {
 
     public ResponseEntity<String> deleteBookById(int id) {
         return repo.findById(id)
-            .map(book -> {
-                repo.delete(book);
-                return new ResponseEntity<>(
-                    "Book " + book.getTitle() + " by " + book.getAuthor() + " deleted successfully!",
-                    HttpStatus.OK
-                );
-            })
-            .orElse(new ResponseEntity<>("Book Not Found!",HttpStatus.NOT_FOUND));
+                .map(book -> {
+                    repo.delete(book);
+                    return new ResponseEntity<>(
+                            "Book " + book.getTitle() + " by " + book.getAuthor() + " deleted successfully!",
+                            HttpStatus.OK
+                    );
+                })
+                .orElse(new ResponseEntity<>("Book Not Found!", HttpStatus.NOT_FOUND));
     }
 
 }
