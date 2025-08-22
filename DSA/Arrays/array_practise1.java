@@ -19,6 +19,80 @@ public class array_practise1{
 
 		topics.checkIfTheArrayIsSortedOrNot(uarr);
 
+		topics.sumOfAllElements(uarr);
+
+		topics.findSecondLargestElement(uarr);
+
+		topics.arrayContainsTheSpecificElement(uarr);
+
+		topics.mergeTwoSortedArray();
+
+	}
+
+	public void mergeTwoSortedArray() {
+		System.out.println();
+		System.out.println("Merge two Array ");
+		int arr1[] = {1,3,5,7,9};
+		int arr2[] = {2,4,6,8,10};
+		int arr1size = arr1.length;
+		int arr2size = arr2.length;
+		int arr3[] = new int[arr1size+arr2size];
+
+		for(int i=0;i<arr1.length;i++) {
+			arr3[i] = arr1[i];
+		}
+		for(int i=0;i<arr2.length;i++) {
+			arr3[arr1.length+i] = arr2[i];
+		}
+		for(int m:arr3) {
+			System.out.print(m+" ");
+		}
+		System.out.println();
+	}
+
+	public void arrayContainsTheSpecificElement(int arr[]) {
+		System.out.println();
+		System.out.println("Find Specific Element in Array");
+
+		int search = 9;
+		Boolean val = false;
+		for(int m:arr) {
+			if(m==search){
+				val = true;
+				break;
+			}
+		}
+
+		System.out.println(val ? "Contains the Element":"Don't not contains the Element");
+	}
+
+	public void findSecondLargestElement(int arr[]) {
+		System.out.println();
+		System.out.println("Finding the Second largest Element");
+
+		int first = 0;
+		int second = 0;
+		for(int m:arr) {
+			if(m>first && m>second) {
+				second = first;
+				first = m;
+			}
+			else if(m>second && m<first){
+				second = m;
+			}
+		}
+		System.out.println("Second largest Element is : "+second);
+	}
+
+	public void sumOfAllElements(int arr[]) {
+		System.out.println();
+		System.out.println("Sum of All the Element");
+		int sum = 0;
+		for(int m:arr){
+			sum += m;
+		}
+		System.out.println("Sum of all the element is : "+sum);
+
 	}
 
 	public void checkIfTheArrayIsSortedOrNot(int uarr[]) {
