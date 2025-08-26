@@ -1,3 +1,8 @@
+what are triggers in SQL?
+What is difference between sql and nosql?
+
+
+
 CREATE TABLE Departments (
     dept_id INT PRIMARY KEY,
     dept_name VARCHAR(50)
