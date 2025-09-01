@@ -10,11 +10,11 @@ public class InsertionSorting{
 
 
 			System.out.println();
-		System.out.println("------------------ I : "+i);
-		for(int m:nums) {
-			System.out.print(m+" ");
-		}
-		System.out.println();
+			System.out.println("------------------ I : "+i);
+			for(int m:nums) {
+				System.out.print(m+" ");
+			}
+			System.out.println();
 
 
 			while(j>0 && nums[j-1] > nums[j]) {
@@ -36,6 +36,7 @@ public class InsertionSorting{
 		}
 
 		System.out.println();
+		System.out.println("Final ");
 		for(int m:nums) {
 			System.out.print(m+" ");
 		}
