@@ -25,9 +25,7 @@ public class ThreeSum{
 			for(int n:m) {
 				System.out.print(n+" ");
 			}
-			System.out.println();
 		}
-		System.out.println();
 
 	}
 }
