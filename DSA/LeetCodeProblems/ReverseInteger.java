@@ -9,7 +9,7 @@ public class ReverseInteger{
 		while(temp!=0) {
 			int tt = temp % 10;
 			System.out.println("--"+tt+" == "+result);
-
+			System.out.println("Max : "+Integer.MAX_VALUE);
 			if (result > Integer.MAX_VALUE / 10 || 
                (result == Integer.MAX_VALUE / 10 && tt > 7)) {
                 System.out.println("Overflow! Returning 0");
